@@ -117,7 +117,7 @@ function show1({ target }) {
         });
         let container =
           `
-          <div class="Show_Container">
+          <div class="Show_Container" >
         <div id="Show_Img" style=" background-image: url(${imagee});"></div>
         <div id="Show_details">
           <h2 class="Show_Names">${nameE || namee}</h2>

@@ -1,5 +1,4 @@
 
-// async function synx () {
 var query = `
 query ($page: Int, $perPage: Int, $search: String) {
     Page(page: $page, perPage: $perPage) {
@@ -67,21 +66,13 @@ query ($page: Int, $perPage: Int, $search: String) {
     }
   }
 `
-
-
-
-
   var variables = {
     id: 15125,
     page: 1,
     perPage: 10,
   }
-  let Pr = variables.perPage
 
-if(Pr != 20){
-  Pr = 20
-}
-
+  // Start Fetching the Api Data
 let Anime = fetch(`https://graphql.anilist.co`, {
   method: 'POST',
   headers: {
@@ -94,34 +85,32 @@ let Anime = fetch(`https://graphql.anilist.co`, {
     Media: {
       Type: 'Anime'
     }
-    
   })
-
-
 })
 
-Anime.then((DataReq) => DataReq.json())
+  Anime.then((DataReq) => DataReq.json())
   .then((VV) => {
-    // console.log(VV)
     let DD = VV.data.Page.media
-    // console.log(banner)
+
+    // Here Maped the Data
     DD.map((items) => {
       let Poster_Anime = items.coverImage.extraLarge
       let Name_Anime = items.title.romaji
-      // let EP = items.episodes
       let Year = items.startDate.year
       let status = items.status
       let season = items.season
       let avg = items.averageScore
       let gen = items.genres
       let des = items.description 
-      // let desSlice = des.slice(0,223)
+
+      // This remove the <Br> in card description
       $('.card__description').each(function() {
         $(this).html($(this).html().split('<br>')[0]);
       });
 
+      // Here API Data make design
       let Pic_Container = ` 
-      <div class="Holder card">
+      <div class="Holder card" data-aos="zoom-in">
       <div class="card__content">
       <p class="card__title">${Name_Anime}</p>
       <p class="card__description">${des}</p>
@@ -142,17 +131,9 @@ Anime.then((DataReq) => DataReq.json())
     
        `
 
-
+      // Added the Api Data to HTML
       document.getElementById("Row-1").innerHTML += Pic_Container
-
-
-
-
 
     })
 
-
-
   })
-
-// }

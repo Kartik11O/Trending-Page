@@ -52,38 +52,41 @@ query ($page: Int, $perPage: Int, $search: String) {
   }
 `
 var variables = {
-    id: 15125,
-    page: 1,
-    perPage: 10
+  id: 15125,
+  page: 1,
+  perPage: 10
 };
 
+// Start Fetching the Api Data
 let Manga_List = fetch('https://graphql.anilist.co', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-        query: query,
-        variables: variables,
-        Media: {
-            Type: 'Anime'
-        }
-    })
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+  },
+  body: JSON.stringify({
+    query: query,
+    variables: variables,
+    Media: {
+      Type: 'Anime'
+    }
+  })
 
 })
 
 Manga_List.then((Data_M) => Data_M.json())
-    .then((Manga) => {
-        // console.log(Manga)
-        let ML = Manga.data.Page.media
-        ML.map((items2) => {
-            // console.log(items2)
-            let Poster_Manga = items2.coverImage.extraLarge
-            let Manga_Name = items2.title.romaji
-            let gen_manga = items2.genres
-            let Container_Manga = `
-            <div class="Holder">
+  .then((Manga) => {
+    let ML = Manga.data.Page.media
+
+    // Here Maped the Data
+    ML.map((items2) => {
+      let Poster_Manga = items2.coverImage.extraLarge
+      let Manga_Name = items2.title.romaji
+      let gen_manga = items2.genres
+
+      // Here API Data make design
+      let Container_Manga = `
+            <div class="Holder" data-aos="zoom-in">>
             <div class="IMGholder" style="background-image: url(${Poster_Manga});"></div>
             <h2 class="Anime-Headline">${Manga_Name}</h2>
             <span class="Anime-GEN">${gen_manga[0]}</span>
@@ -93,29 +96,9 @@ Manga_List.then((Data_M) => Data_M.json())
 
         
                     `
-
-                document.getElementById("Row-2").innerHTML += Container_Manga
-        })
+      // Added the Api Data to HTML
+      document.getElementById("Row-2").innerHTML += Container_Manga
     })
+  })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

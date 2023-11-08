@@ -1,0 +1,65 @@
+/* View-Container */
+#SEC-4 {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    background-color: #F9F6EE;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.View__More-Container {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 23;
+}
+
+.View-Back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background: #000000;
+    color: #fff;
+    border: none;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 0px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 13px;
+}
+
+.View-Back:hover {
+    background-color: #ED760E;
+}
+
+#Headline-2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 14vh;
+    background: black;
+}
+
+#Row-3 {
+    position: relative;
+    width: clamp(300px, 95vw, 1459px);
+    height: min-content;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+    /* margin-bottom: 1rem; */
+}

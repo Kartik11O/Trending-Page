@@ -1,6 +1,14 @@
 .Holder{
   width: clamp(245px,16vw,245px);
     height: max-content;
+    animation: Holder_Show 0.6s both;
+}
+@keyframes Holder_Show {
+  0%{
+    /* opacity: 0; */
+    /* transform: translateY(-10px); */
+  }
+  
 }
 
 .IMGholder{
