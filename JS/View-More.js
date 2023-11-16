@@ -1,77 +1,8 @@
-// import { query , variables  } from "/components/Api.js";
+import { query , variables  } from "/components/Api.js";
+//  Fetching form Components (TYPE ANIME)
 
-var query = `
-query ($page: Int, $perPage: Int, $search: String) {
-    Page(page: $page, perPage: $perPage) {
-      pageInfo {
-        total
-      currentPage
-      lastPage
-      hasNextPage
-      perPage
 
-      }
-      media(search: $search, type: ANIME , sort: TRENDING_DESC) {
-        id
-        
-        title {
-          romaji
-          english
-          native
-        }
-        bannerImage
-        coverImage  {
-            extraLarge
-        }
-       characters {
-          edges {
-            id
-            node {
-              image {
-                large
-              }
-            }
-          }
-        }
-          
-        studios(isMain: true) {
-          nodes {
-            name
-          }
-        }
-         
-        startDate {
-            year
-            month
-            day
-        }
-        endDate{
-            year
-            month
-            day 
-        }
-        format
-        trending
-        isAdult
-        type
-        genres
-        episodes
-        duration
-        status
-        popularity
-        averageScore
-        season
-        siteUrl
-        description
-      }
-    }
-  }
-`
-var variables = {
-  id: 15125,
-  page: 1,
-  perPage: 10,
-}
+
 // This Show the View More
 $(".View").on('click', () => {
   $(".View__More-Container").fadeIn()
@@ -116,7 +47,7 @@ function View(_variables) {
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
-      console.log(Data)
+      // console.log(Data)
 
       // Here Maped the Data
       Data.map((items) => {

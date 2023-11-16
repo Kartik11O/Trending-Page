@@ -1,78 +1,8 @@
+import { query, variables } from "/components/Api.js";
+//  Fetching form Components (TYPE ANIME)
 
-var query = `
-query ($page: Int, $perPage: Int, $search: String) {
-    Page(page: $page, perPage: $perPage) {
-      pageInfo {
-        total
-      currentPage
-      lastPage
-      hasNextPage
-      perPage
 
-      }
-      media(search: $search, type: ANIME , sort: TRENDING_DESC) {
-        id
-        
-        title {
-          romaji
-          english
-          native
-        }
-        bannerImage
-        coverImage  {
-            extraLarge
-        }
-       characters {
-          edges {
-            id
-            node {
-              image {
-                large
-              }
-            }
-          }
-        }
-          
-        studios(isMain: true) {
-          nodes {
-            name
-          }
-        }
-         
-        startDate {
-            year
-            month
-            day
-        }
-        endDate{
-            year
-            month
-            day 
-        }
-        format
-        trending
-        isAdult
-        type
-        genres
-        episodes
-        duration
-        status
-        popularity
-        averageScore
-        season
-        siteUrl
-        description
-      }
-    }
-  }
-`
-  var variables = {
-    id: 15125,
-    page: 1,
-    perPage: 10,
-  }
-
-  // Start Fetching the Api Data
+// Start Fetching the Api Data
 let Anime = fetch(`https://graphql.anilist.co`, {
   method: 'POST',
   headers: {
@@ -81,14 +11,14 @@ let Anime = fetch(`https://graphql.anilist.co`, {
   },
   body: JSON.stringify({
     query: query,
-    variables:variables,
+    variables: variables,
     Media: {
       Type: 'Anime'
     }
   })
 })
 
-  Anime.then((DataReq) => DataReq.json())
+Anime.then((DataReq) => DataReq.json())
   .then((VV) => {
     let DD = VV.data.Page.media
 
@@ -101,10 +31,10 @@ let Anime = fetch(`https://graphql.anilist.co`, {
       let season = items.season
       let avg = items.averageScore
       let gen = items.genres
-      let des = items.description 
+      let des = items.description
 
       // This remove the <Br> in card description
-      $('.card__description').each(function() {
+      $('.card__description').each(function () {
         $(this).html($(this).html().split('<br>')[0]);
       });
 

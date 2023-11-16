@@ -20,6 +20,7 @@
     width: 95vw;
     height:max-content;
     display: flex;
+    justify-content: center;
     gap: 50px;
     align-items: center;
     flex-wrap: wrap;
