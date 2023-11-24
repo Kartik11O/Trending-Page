@@ -1,0 +1,30 @@
+#SEC-3-View {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    background-color: #F9F6EE;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#Row-4 {
+    position: relative;
+    width: clamp(300px, 95vw, 1459px);
+    height: min-content;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+    animation: AniM 1s both;
+}
+
+@keyframes AniM {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    
+}

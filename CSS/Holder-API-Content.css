@@ -1,5 +1,6 @@
 .Holder{
-  width: clamp(245px,16vw,245px);
+  /* width: clamp(245px,16vw,245px); */
+  width: clamp(230px,15vw,230px);
     height: max-content;
     animation: Holder_Show 0.6s both;
 }
@@ -12,7 +13,7 @@
 }
 
 .IMGholder{
-  width: clamp(245px,16vw,245px);
+  width: clamp(230px,15vw,230px);
   height: clamp(343px,46vh,343px);
     background-size: contain;
     background-repeat: no-repeat;

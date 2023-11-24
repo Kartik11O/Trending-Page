@@ -20,10 +20,15 @@
 <link rel="stylesheet" href="CSS/SEC-2/A.css">
 <link rel="stylesheet" href="CSS/SEC-3/A.css">
 <link rel="stylesheet" href="CSS/SEC-4/A.css">
+<link rel="stylesheet" href="CSS/SEC-5/SEC-5.css">
+<link rel="stylesheet" href="CSS/btn.css">
 <link rel="stylesheet" href="CSS/Holder-API-Content.css">
+<link rel="stylesheet" href="CSS/SEC-3/B.css">
+<link rel="stylesheet" href="CSS/SEC-5/ThisSeason.css">
+<link rel="stylesheet" href="CSS/btn2.css">
 <link rel="stylesheet" href="CSS/Footer/footer.css">
-
-<body> 
+<link rel="stylesheet" media="(max-width:500px)" href="Phone/Normal-Phone.css">
+<body>
   <main id="main">
     <!-- <div id="loading">
       <div class="one"></div>
@@ -32,6 +37,24 @@
       <div class="one"></div>
       <div class="one"></div>
     </div> -->
+    <div id="btn-Wapper" class="Click-close">
+      <!-- <div id="Click"></div> -->
+      <div class="switch">
+        <input type="checkbox">
+        <div>
+          <span class="line-1"></span>
+          <span class="line-2"></span>
+          <span class="line-3"></span>
+        </div>
+      </div>
+      <ul id="UL99">
+        <li id="1" class="LI99"> <a href="#SEC-2"> Trending Anime </a></li>
+        <li id="2" class="LI99"> <a href="#SEC-3"> Trending Manga </a></li>
+        <li id="3" class="LI99"> <a href="#ThisS"> This Season </a></li>
+        <li id="4" class="LI99"> <a href="#All">All Time Popular </a> </li>
+      </ul>
+    </div>
+
     <section id="SEC-1">
       <!-- (Contain--- NavBar / Social-Icons / Headline) -->
       <div id="Navbar">
@@ -79,20 +102,20 @@
     </section>
 
 
-<!--View More Container -->
-    <section id="SEC-4" >
-      <div id="View__More_Adder" class="View__More-Container">
+    <!--View More Container -->
+    <section id="SEC-4">
+      <div id="SEC-4-View-More" class="View__More-Container">
         <!-- <div id="headline-2"> -->
-        <button class="View-Back"> <svg xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-arrow-big-left-lines" width="34" height="34" viewBox="0 0 24 24"
-            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path
-              d="M12 15v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h3v6h-3z">
-            </path>
-            <path d="M21 15v-6"></path>
-            <path d="M18 15v-6"></path>
-          </svg> </button>
+        <button class="View-Back">
+          <div class="radio-wrapper">
+            <input class="input" name="btn" id="value-1" type="radio">
+            <div class="btn">
+              <span aria-hidden="">_</span>Back
+              <span class="btn__glitch" aria-hidden="">_Back🦾</span>
+              <label class="number">r1</label>
+            </div>
+          </div>
+        </button>
         <!-- </div> -->
 
         <div id="Row-3">
@@ -107,7 +130,7 @@
     <section id="SEC-2">
       <div class="Trending-Container">
         <h2 class="Trending">tRending Anime</h2>
-        <button class="View"> View More</button>
+        <button class="View" id="trending"> View More</button>
       </div>
 
       <div id="Trending-info-wapper">
@@ -120,12 +143,34 @@
     </section>
     <!-- Type Animwe -->
 
+    <section id="SEC-3-View">
+      <div id="SEC-3-View-btn" class="View__More-Container">
+        <!-- <div id="headline-2"> -->
+        <button class="View-Back" id="View-Back-Manga">
+          <div class="radio-wrapper">
+            <input class="input" name="btn" id="value-1" type="radio">
+            <div class="btn">
+              <span aria-hidden="">_</span>Back
+              <span class="btn__glitch" aria-hidden="">_Back🦾</span>
+              <label class="number">r1</label>
+            </div>
+          </div>
+        </button>
+        <!-- </div> -->
 
+        <div id="Row-4">
+          <div class="Line"></div>
+          <div class="Line2"></div>
+        </div>
+
+      </div>
+
+    </section>
 
     <section id="SEC-3">
       <div class="Trending-Container">
         <h2 class="Trending">tRending Manga</h2>
-        <button class="View"> View More</button>
+        <button class="View" id="Color_P"> View More</button>
       </div>
 
       <div id="Trending-info-wapper-2">
@@ -133,9 +178,79 @@
       </div>
 
     </section>
-
     <!-- Type Manga -->
 
+    <section id="SEC-5-View">
+      <div id="SEC-5-View-btn" class="View__More-Container">
+        <button class="View-Back" id="View-Back-Popular">
+          <div class="radio-wrapper">
+            <input class="input" name="btn" id="value-1" type="radio">
+            <div class="btn">
+              <span aria-hidden="">_</span>Back
+              <span class="btn__glitch" aria-hidden="">_Back🦾</span>
+              <label class="number">r1</label>
+            </div>
+          </div>
+
+        </button>
+
+        <div id="Row-7">
+          <div class="Line"></div>
+          <div class="Line2"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="SEC-5-View-2">
+      <div id="SEC-5-View-btn-2" class="View__More-Container">
+        <button class="View-Back" id="View-Back-Time">
+          <div class="radio-wrapper">
+            <input class="input" name="btn" id="value-1" type="radio">
+            <div class="btn">
+              <span aria-hidden="">_</span>Back
+              <span class="btn__glitch" aria-hidden="">_Back🦾</span>
+              <label class="number">r1</label>
+            </div>
+          </div>
+        </button>
+        <div id="Row-8">
+          <div class="Line"></div>
+          <div class="Line2"></div>
+        </div>
+
+    </section>
+
+
+    <section id="SEC-5">
+      <div class="Wapper-Contain">
+        <div class="Trending-Container">
+          <!-- <div class="custom-shape-divider-top-1700215473">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div> -->
+          <h2 class="Trending">popular this season</h2>
+          <button class="View" id="Color_O"> View More</button>
+        </div>
+        <div id="Trending-info-wapper-2">
+          <div id="Row-5"> </div>
+        </div>
+      </div>
+
+      <div class="Wapper-Contain">
+        <div class="Trending-Container">
+
+          <h2 class="Trending" id="All">All tiMe popular</h2>
+          <button class="View" id="Color_B"> View More</button>
+        </div>
+
+        <div id="Trending-info-wapper-2">
+          <div id="Row-6"> </div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -155,9 +270,15 @@
   <script src="JS/SearchAnimation.js"></script>
   <script type="module" src="JS/View-More.js"></script>
   <script type="module" src="components/Api.js"></script>
-  <!-- <script type="module" src="JS/Api.js"></script> -->
+  <script type="module" src="JS/Type_Popular.js"></script>
+  <script type="module" src="JS/Type_All_Time.js"></script>
+  <script type="module" src="JS/View-More-Manga.js"></script>
+  <script type="module" src="JS/View-More-Popular.js"></script>
+  <script type="module" src="JS/View-More-All-Time.js"></script>
+  <script src="JS/Click.js"></script>
+
+
   <link rel="stylesheet" href="JS/Loading.js">
-  <!-- <script src="Visible.js"></script> -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();

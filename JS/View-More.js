@@ -4,24 +4,27 @@ import { query , variables  } from "/components/Api.js";
 
 
 // This Show the View More
-$(".View").on('click', () => {
-  $(".View__More-Container").fadeIn()
+$("#trending").on('click', () => {
+  $("#SEC-4-View-More").fadeIn()
   $("#SEC-4").fadeIn()
   $("#SEC-4").css({
     display: 'flex'
   })
-  $(".View__More-Container").css({
+  $("#SEC-4-View-More").css({
     display: 'flex'
   })
   $("#SEC-2").fadeOut()
   $("#SEC-3").fadeOut()
+  $("#SEC-5").fadeOut()
 
 })
 // This Close the View More
 $(".View-Back").on('click', () => {
-  $(".View__More-Container").fadeOut()
+  $("#SEC-4-View-More").fadeOut()
+  $("#SEC-4").fadeOut()
   $("#SEC-2").fadeIn()
   $("#SEC-3").fadeIn()
+  $("#SEC-5").fadeIn()
 })
 
 
@@ -52,6 +55,7 @@ function View(_variables) {
       // Here Maped the Data
       Data.map((items) => {
         let Poster_Anime = items.coverImage.extraLarge
+        let Name_AnimeE = items.title.english
         let Name_Anime = items.title.romaji
         let Year = items.startDate.year
         let status = items.status
@@ -69,7 +73,7 @@ function View(_variables) {
         let container = ` 
       <div class="Holder card" data-aos="zoom-in">
       <div class="card__content">
-      <p class="card__title">${Name_Anime}</p>
+      <p class="card__title">${Name_AnimeE || Name_Anime}</p>
       <p class="card__description">${des}</p>
       <p class="card__Status extra1 ALL"><b>Status:</b> ${status} , ${season} ${Year}</p>
       <p class="card__Gen extra2 ALL"><b>Genre:</b> ${gen[1] || gen[0] || gen[2] || gen[3]}, ${gen[0]}, ${gen[2]} </p>
@@ -79,7 +83,7 @@ function View(_variables) {
     <div class="IMGholder" style="background-image: url(${Poster_Anime});">
     </div>
 
-       <h2 class="Anime-Headline">${Name_Anime}</h2>
+       <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
        <span class="Anime-GEN">${gen[0]}</span>
        <span class="Anime-GEN">${gen[1]}</span>
        <span class="Anime-GEN">${gen[2]}</span>
@@ -97,59 +101,128 @@ function View(_variables) {
 
 
 // Get a reference to the target element you want to observe
-const targetElement = document.getElementById('SEC-4');
+// const targetElement = document.getElementById('SEC-4');
 
 // Define the callback function to be executed when the element is visible
-function handleVisibility(entries, observer) {
-  entries.forEach(entry => {
+// function handleVisibility(entries, observer) {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       // The target element is fully or partially visible
+//       // Execute your function here
+//       window.addEventListener('scroll', isAtBottom);
+//       isAtBottom();
+//       // Stop observing if needed
+//     }
+    
+
+// else {
+//   // The element is not visible in the viewport
+//   // Stop observing the element
+//   console.log('Element is not visible');
+//   observer.unobserve(entry.target);
+// }
+
+   
+//   });
+// }
+
+// // Create an Intersection Observer
+// const observer = new IntersectionObserver(handleVisibility, {
+//   root: null, // Use the viewport as the root
+//   rootMargin: '0px', // No margin
+//   threshold: 0.2, // Trigger when at least 10% of the target is visible
+// });
+
+// // Start observing the target element
+// observer.observe(targetElement);
+
+// Get a reference to the element you want to monitor
+const targetElement = document.getElementById('SEC-4');
+
+// Function to be executed when the element intersects
+function handleIntersection(entries, observer) {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // The target element is fully or partially visible
-      // Execute your function here
-      isAtBottom();
-      window.addEventListener('scroll', isAtBottom);
-      // Stop observing if needed
-      observer.unobserve(targetElement);
+      // The element is visible in the viewport
+      // You can execute your function or code here
+      document.addEventListener('scroll', isAtBottom);
+      // isAtBottom()
+      console.log('Element is visible in the viewport');
+
+      function isAtBottom() {
+
+        // Calculate the current scroll position
+        const windowHeight = window.innerHeight; // Height of the viewport
+        const documentHeight = document.documentElement.scrollHeight; // Total height of the document
+        const scrollPosition = window.scrollY; // Current vertical scroll position
+      
+        // Define a threshold (e.g., 10 pixels) to trigger the action
+        const threshold = 10;
+      
+        // Check if the user has reached the bottom
+        if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
+          // The user has reached the bottom of the window, do something here
+          $(".View__More-Container").css({
+            marginBottom: '5rem'
+          })
+          variables.page++;
+          View(variables);
+          console.log("calling")
+          
+        }
+      }
+      
+    
+      
+    } else {
+      // The element is not visible in the viewport
+      // Stop observing the element
+      console.log('Element is not visible');
+      observer.unobserve(entry.target);
+      // Start observing the element again when it becomes visible
+      const observeAgain = () => {
+        obsserver.observe(entry.target);
+          console.log('Observing element again');
+    
+      };
+
+      // Set a timeout to resume observing after a delay (e.g., 500ms)
+      setTimeout(observeAgain, 500);
     }
   });
 }
 
+// Options for the Intersection Observer
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3, // Adjust threshold as needed
+};
+
 // Create an Intersection Observer
-const observer = new IntersectionObserver(handleVisibility, {
-  root: null, // Use the viewport as the root
-  rootMargin: '0px', // No margin
-  threshold: 0.1, // Trigger when at least 10% of the target is visible
-});
+const observer = new IntersectionObserver(handleIntersection, options);
 
 // Start observing the target element
 observer.observe(targetElement);
 
-// Your function to be executed when the element is visible
-// function yourFunction() {
-//   console.log('Element is visible!');
-// }
-let view = document.getElementById("view__More_Adder")
-function isAtBottom() {
 
-  // Calculate the current scroll position
-  const windowHeight = window.innerHeight; // Height of the viewport
-  const documentHeight = document.documentElement.scrollHeight; // Total height of the document
-  const scrollPosition = window.scrollY; // Current vertical scroll position
 
-  // Define a threshold (e.g., 10 pixels) to trigger the action
-  const threshold = 2;
 
-  // Check if the user has reached the bottom
-  if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
-    // The user has reached the bottom of the window, do something here
-    $(".View__More-Container").css({
-      marginBottom: '5rem'
-    })
-    variables.page++;
-    View(variables);
-    console.log("calling")
 
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

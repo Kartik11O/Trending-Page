@@ -1,0 +1,175 @@
+html{
+    font-size: 50%;
+}
+
+/* It Sets the Sociall Icons (Start) */
+#Icons {
+    top: 0;
+    width: clamp(65px,16vw,322px);
+    height: clamp(213px,32vh,213px);
+}
+
+#UL__I {
+    flex-direction: column;
+    width: inherit;
+    height: inherit;
+}
+
+.LI__I a {
+    width: clamp(30px,35px,50px);
+    height: clamp(30px,35px,50px);
+    line-height: 35px;
+}
+/* (End) */
+
+.View {
+    position: absolute;
+    right: 0;
+    margin-right: 2rem;
+    border: solid black 2px;
+    background-color: #FEE561;
+    color: #000000;
+    border-radius: 4rem;
+    width: clamp(76px,7vw,107px);
+    height: clamp(29px,5vh,37px);
+    font-size: 1.5rem;
+    transition: 0.3s;
+    font-family: var(--Headline);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.Trending{
+    font-size: 2.78rem;
+    font-family: 'Major Mono Display', monospace;
+    margin-left: 2rem;
+    border-bottom: 2px solid black;
+}
+
+.IMGholder {
+    width: clamp(179px,15vw,230px);
+    height: clamp(254px,38vh,343px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #000000;
+    line-height: 1.4;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#Row-1 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
+#Row-2 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
+#Row-3 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 11rem;
+    animation: tests 1s both;
+}
+#Row-4 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
+#Row-5 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
+#Row-6 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
+
+.Holder {
+    width: clamp(172px,46vw,230px);
+}
+.IMGholder {
+    width: inherit;
+    height: clamp(240px,36vh,240px);
+    /* height: clamp(254px,38vh,343px); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Anime-Headline {
+    margin: auto;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+    font-family: var(--Headline);
+    margin-left: 1px;
+    border-bottom: 2px solid black;
+}
+
+.Anime-GEN {
+    margin: auto;
+    font-family: var(--Headline);
+    border-radius: 13px;
+    font-weight: 700;
+    margin-left: 4px;
+    font-size: 1.7rem;
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow-y: scroll; */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2f7;
+    transform: rotateX(-261deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

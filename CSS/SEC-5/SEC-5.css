@@ -1,0 +1,96 @@
+#SEC-5{
+    position: relative;
+    width: clamp(300px, 100%, 100%);
+    height: max-content;
+    background: #F9F6EE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+}
+
+.Wapper-Contain{
+width: 100%;
+height: max-content;
+color: #000000
+}
+
+#Color_O{
+    background-color: #FF6B5E;
+}
+#Color_B{
+    background-color: #2ECFDB;
+}
+
+#Row-5{
+    width: 95vw;
+    height:max-content;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#Row-6{
+    width: 95vw;
+    height:max-content;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-shape-divider-top-1700215473 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1700215473 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 123px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1700215473 .shape-fill {
+    fill: #FF6B5E;
+}

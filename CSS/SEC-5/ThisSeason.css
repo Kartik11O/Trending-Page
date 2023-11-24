@@ -1,0 +1,52 @@
+#SEC-5-View {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    background-color: #F9F6EE;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#Row-7 {
+    position: relative;
+    width: clamp(300px, 95vw, 1459px);
+    height: min-content;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+    animation: AniM 1s both;
+}
+
+/* ALL Time Popular */
+#SEC-5-View-2 {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    background-color: #F9F6EE;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#Row-8 {
+    position: relative;
+    width: clamp(300px, 95vw, 1459px);
+    height: min-content;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+    animation: AniM 1s both;
+}
+
+
+
+
+/* //////////////////////////////////// */
+  

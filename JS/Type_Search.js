@@ -1,6 +1,6 @@
+// import {variables , query } from "/components/Api.js";
 
 function show1({ target }) {
-  console.log(target)
   var query = `
   query ($page: Int, $perPage: Int, $search: String) {
       Page(page: $page, perPage: $perPage) {

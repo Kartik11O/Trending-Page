@@ -27,7 +27,8 @@ Nav{
     bottom: 0;
     left: 0;
     z-index: 99;
-    width: clamp(322px,21vw,322px);
+    /* width: clamp(322px,21vw,322px); */
+    width: clamp(155px,21vw,322px);
     height: clamp(89px,12vh,89px);
     display: flex;
     justify-content: center;
@@ -63,7 +64,8 @@ list-style: none;
 .LI__I a{
     position: relative;
     width: 50px;
-    height: 50px;
+    width: clamp(30px,50px,50px);
+    height: clamp(30px,50px,50px);
     line-height: 50px;
     text-align: center;
     border-radius: 50px;
