@@ -1,4 +1,4 @@
-import { query3 , variables  } from "/components/Api.js";
+import { query3 , variables  } from "/componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
 

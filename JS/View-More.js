@@ -1,4 +1,4 @@
-import { query , variables  } from "/components/Api.js";
+import { query , variables  } from "/componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
 
@@ -100,132 +100,77 @@ function View(_variables) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Get a reference to the target element you want to observe
-// const targetElement = document.getElementById('SEC-4');
-
-// Define the callback function to be executed when the element is visible
-// function handleVisibility(entries, observer) {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       // The target element is fully or partially visible
-//       // Execute your function here
-//       window.addEventListener('scroll', isAtBottom);
-//       isAtBottom();
-//       // Stop observing if needed
-//     }
-    
-
-// else {
-//   // The element is not visible in the viewport
-//   // Stop observing the element
-//   console.log('Element is not visible');
-//   observer.unobserve(entry.target);
-// }
-
-   
-//   });
-// }
-
-// // Create an Intersection Observer
-// const observer = new IntersectionObserver(handleVisibility, {
-//   root: null, // Use the viewport as the root
-//   rootMargin: '0px', // No margin
-//   threshold: 0.2, // Trigger when at least 10% of the target is visible
-// });
-
-// // Start observing the target element
-// observer.observe(targetElement);
-
-// Get a reference to the element you want to monitor
 const targetElement = document.getElementById('SEC-4');
 
-// Function to be executed when the element intersects
-function handleIntersection(entries, observer) {
-  entries.forEach((entry) => {
+// Define the callback function to be executed when the element is visible
+function handleVisibility(entries, observer) {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // The element is visible in the viewport
-      // You can execute your function or code here
-      document.addEventListener('scroll', isAtBottom);
-      // isAtBottom()
-      console.log('Element is visible in the viewport');
-
-      function isAtBottom() {
-
-        // Calculate the current scroll position
-        const windowHeight = window.innerHeight; // Height of the viewport
-        const documentHeight = document.documentElement.scrollHeight; // Total height of the document
-        const scrollPosition = window.scrollY; // Current vertical scroll position
-      
-        // Define a threshold (e.g., 10 pixels) to trigger the action
-        const threshold = 10;
-      
-        // Check if the user has reached the bottom
-        if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
-          // The user has reached the bottom of the window, do something here
-          $(".View__More-Container").css({
-            marginBottom: '5rem'
-          })
-          variables.page++;
-          View(variables);
-          console.log("calling")
-          
-        }
-      }
-      
-    
-      
-    } else {
-      // The element is not visible in the viewport
-      // Stop observing the element
-      console.log('Element is not visible');
-      observer.unobserve(entry.target);
-      // Start observing the element again when it becomes visible
-      const observeAgain = () => {
-        obsserver.observe(entry.target);
-          console.log('Observing element again');
-    
-      };
-
-      // Set a timeout to resume observing after a delay (e.g., 500ms)
-      setTimeout(observeAgain, 500);
+      // The target element is fully or partially visible
+      // Execute your function here
+      isAtBottom();
+      window.addEventListener('scroll', isAtBottom);
+      // Stop observing if needed
+      observer.unobserve(targetElement);
     }
   });
 }
 
-// Options for the Intersection Observer
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.3, // Adjust threshold as needed
-};
-
 // Create an Intersection Observer
-const observer = new IntersectionObserver(handleIntersection, options);
+const observer = new IntersectionObserver(handleVisibility, {
+  root: null, // Use the viewport as the root
+  rootMargin: '0px', // No margin
+  threshold: 0.1, // Trigger when at least 10% of the target is visible
+});
 
 // Start observing the target element
 observer.observe(targetElement);
 
 
+function isAtBottom() {
 
+  // Calculate the current scroll position
+  const windowHeight = window.innerHeight; // Height of the viewport
+  const documentHeight = document.documentElement.scrollHeight; // Total height of the document
+  const scrollPosition = window.scrollY; // Current vertical scroll position
 
+  // Define a threshold (e.g., 10 pixels) to trigger the action
+  const threshold = 2;
 
+  // Check if the user has reached the bottom
+  if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
+    // The user has reached the bottom of the window, do something here
+    $(".View__More-Container").css({
+      marginBottom: '5rem'
+    })
+    variables.page++;
+    View(variables);
+    console.log("calling")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+}
 
 
 
 
 
 View(variables);
+
