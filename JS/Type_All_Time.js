@@ -1,4 +1,4 @@
-import {variables_5 , query4 } from "/componentss/Api.js";
+import {variables_5 , query4 } from "../componentss/Api.js";
 
   
 let Popular = fetch(`https://graphql.anilist.co`,{

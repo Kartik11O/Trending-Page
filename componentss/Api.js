@@ -155,7 +155,7 @@ query ($page: Int, $perPage: Int, $search: String) {
       perPage
 
       }
-      media(search: $search, type: ANIME , sort: TRENDING_DESC) {
+      media(search: $search, type: ANIME , sort: FAVOURITES_DESC) {
         id
         
         title {

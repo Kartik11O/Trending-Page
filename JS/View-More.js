@@ -1,4 +1,4 @@
-import { query , variables  } from "/componentss/Api.js";
+import { query , variables  } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
 
@@ -47,12 +47,11 @@ function View(_variables) {
 
 
 
+
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
-      // console.log(Data)
 
-      // Here Maped the Data
       Data.map((items) => {
         let Poster_Anime = items.coverImage.extraLarge
         let Name_AnimeE = items.title.english
@@ -100,23 +99,6 @@ function View(_variables) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Get a reference to the target element you want to observe
 const targetElement = document.getElementById('SEC-4');
 
@@ -158,9 +140,7 @@ function isAtBottom() {
   // Check if the user has reached the bottom
   if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
     // The user has reached the bottom of the window, do something here
-    $(".View__More-Container").css({
-      marginBottom: '5rem'
-    })
+
     variables.page++;
     View(variables);
     console.log("calling")
@@ -168,9 +148,7 @@ function isAtBottom() {
   }
 }
 
-
-
-
-
 View(variables);
+
+
 

@@ -1,120 +1,180 @@
-.Holder{
+.Holder {
   /* width: clamp(245px,16vw,245px); */
-  width: clamp(230px,15vw,230px);
-    height: max-content;
-    animation: Holder_Show 0.6s both;
+  width: clamp(230px, 15vw, 230px);
+  height: max-content;
+  animation: Holder_Show 0.6s both;
 }
+
 @keyframes Holder_Show {
-  0%{
+  0% {
     /* opacity: 0; */
     /* transform: translateY(-10px); */
   }
-  
+
 }
 
-.IMGholder{
-  width: clamp(230px,15vw,230px);
-  height: clamp(343px,46vh,343px);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.IMGholder {
+  width: clamp(230px, 15vw, 230px);
+  height: clamp(343px, 46vh, 343px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.Anime-Headline{
-    margin: auto;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-    font-family: var(--Headline);
-    margin-left: 9px;
-    border-bottom: 2px solid black;
+
+.Anime-Headline {
+  margin: auto;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-family: var(--Headline);
+  margin-left: 9px;
+  border-bottom: 2px solid black;
 }
-.Anime-GEN{
-    margin: auto;
-    font-family: var(--Headline);
-    border-radius: 13px;
-    font-weight: 700;
-    margin-left: 10px;
-    font-size: 1rem;
+
+.Anime-GEN {
+  margin: auto;
+  font-family: var(--Headline);
+  border-radius: 13px;
+  font-weight: 700;
+  margin-left: 10px;
+  font-size: 1rem;
 
 }
 
 
 /* Cards Code Here (Hover Effect) */
 .card {
-    overflow: hidden;
-    perspective: 1000px;
-    /* box-shadow: 0 0 0 5px #ffffff80; */
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card svg {
-    width: 48px;
-    fill: #333;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-  }
-  
-  .card__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* overflow-y: scroll; */
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f2f2f2f7;
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .card:hover .card__content {
-    transform: rotateX(0deg);
-  }
-  
-  .card__title {
-    margin: 0;
-    font-size: 20px;
-    color: #333;
-    font-weight: 700;
-    font-family: var(--Headline);
-    /* border-bottom: 2px solid black; */
-  }
-  
-  .card:hover svg {
-    scale: 0;
-  }
-  
-  .card__description {
-    margin: 10px 0 0;
-    font-size: 15px;
-    color: #000000;
-    line-height: 1.4;
-    height: 200px;
-    overflow-y: scroll;
+  overflow: hidden;
+  perspective: 1000px;
+  /* box-shadow: 0 0 0 5px #ffffff80; */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow-y: scroll; */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2f7;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
+  font-family: var(--Headline);
+  /* border-bottom: 2px solid black; */
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.4;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.extra1 {
+  margin: 0;
+  margin-top: 13px !important;
+}
+
+.extra2 {
+  margin: 0;
+
+}
+
+.extra3 {
+  margin: 0;
+
+}
+
+.ALL {
+  margin-top: 7px;
+}
+
+/* Loading - Animation */
+
+.Holder-Loader {
+  position: relative;
+  height: 54vh;
+  width: clamp(230px, 15vw, 230px);
+  width: 15vw;
+  background-color: #e3e3e3;
+  overflow: hidden;
+}
+
+.Holder-Loader::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+  animation: gradient-animation_2 1.2s linear infinite;
+}
+
+.IMGholder-Loading {
+  width: clamp(230px, 15vw, 230px);
+  height: clamp(343px, 46vh, 343px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #cacaca;
+}
+
+.Name-Loader {
+  width: 15vw;
+  margin-top: 7px;
+  height: 4vh;
+  background-color: #cacaca;
+}
+
+.Type-Loader {
+  width: 15vw;
+  margin-top: 7px;
+  height: 4vh;
+  background-color: #cacaca;
+}
+
+
+@keyframes gradient-animation_2 {
+  0% {
+    transform: translateX(-100%);
   }
 
-  .extra1{
-    margin: 0;
-    margin-top: 13px !important;
+  100% {
+    transform: translateX(100%);
   }
-  
-  .extra2{
-    margin: 0;
- 
-  }
-  
-  .extra3{
-    margin: 0;
-  
-  }
-  
-  .ALL{
-    margin-top: 7px;
-  }
+}
+
