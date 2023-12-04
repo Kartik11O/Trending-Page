@@ -1,0 +1,151 @@
+@media all and (max-device-width: 767px) and (orientation: landscape){
+    html{
+        font-size: 50%;
+    }
+    
+    /* It Sets the Sociall Icons (Start) */
+    #Icons {
+        top: 0;
+        width: clamp(65px,16vw,322px);
+        height: clamp(213px,32vh,213px);
+    }
+    
+    #UL__I {
+        flex-direction: column;
+        width: inherit;
+        height: inherit;
+    }
+    
+    .LI__I a {
+        width: clamp(30px,35px,50px);
+        height: clamp(30px,35px,50px);
+        line-height: 35px;
+    }
+    /* (End) */
+    
+    .View {
+        margin-right: 1rem;
+        width: clamp(72px,6vw,78px);
+        height: clamp(29px,3vh,30px);
+        font-size: 1.3rem;
+        font-weight: 500;
+        border: 1px solid black;
+    }
+    
+    .Trending{
+        font-size: 2.4rem;
+        font-weight: 600;
+        width: clamp(202px,54vw,202px);
+        border-bottom: 1px solid black;
+    }
+    
+    .IMGholder {
+        width: clamp(179px,15vw,230px);
+        height: clamp(254px,38vh,343px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    
+    
+    .card__description {
+        margin: 10px 0 0;
+        font-size: 12px;
+        color: #000000;
+        line-height: 1.4;
+        height: 125px;
+        overflow-y: scroll;
+    }
+    
+    #Row-1 {
+        width: clamp(317px, 100vw, 1459px);
+        height: max-content;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: tests 1s both;
+    }
+    #Row-2 {
+        width: clamp(317px, 100vw, 1459px);
+        height: max-content;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: tests 1s both;
+    }
+    #Row-3 {
+        width: clamp(317px, 100vw, 1459px);
+        height: max-content;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 11rem;
+        animation: tests 1s both;
+    }
+    #Row-4 {
+        width: clamp(317px, 100vw, 1459px);
+        height: max-content;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: tests 1s both;
+    }
+    #Row-5 {
+        width: clamp(317px, 100vw, 1459px);
+        height: max-content;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: tests 1s both;
+    }
+    #Row-6 {
+        width: clamp(317px, 100vw, 1459px);
+        height: max-content;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: tests 1s both;
+    }
+    
+    .Holder {
+        width: clamp(172px,46vw,230px);
+    }
+    .IMGholder {
+        width: inherit;
+        height: clamp(240px,36vh,240px);
+        /* height: clamp(254px,38vh,343px); */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .Anime-Headline {
+        font-size: 1.5rem;
+    }
+    
+    .Anime-GEN {
+        margin: auto;
+        font-family: var(--Headline);
+        border-radius: 13px;
+        font-weight: 700;
+        margin-left: 4px;
+        font-size: 1.7rem;
+    }
+    
+    .card__content {
+        font-size: 1.4rem;
+    }
+}
