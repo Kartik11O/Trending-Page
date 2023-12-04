@@ -36,7 +36,7 @@ html{
 
 .Trending{
     font-size: 2.4rem;
-    font-weight: bold;
+    font-weight: bolder;
     width: clamp(202px,54vw,202px);
     border-bottom: 1px solid black;
 }
