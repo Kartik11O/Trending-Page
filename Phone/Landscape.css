@@ -121,7 +121,7 @@
     }
     
     .Holder {
-        width: clamp(172px,46vw,230px);
+        width: clamp(186px,28vw,186px);
     }
     .IMGholder {
         width: inherit;
@@ -148,4 +148,9 @@
     .card__content {
         font-size: 1.4rem;
     }
+
+
+
+
+    
 }
