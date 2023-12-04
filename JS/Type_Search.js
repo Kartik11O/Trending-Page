@@ -152,6 +152,7 @@ userInput.addEventListener('keypress', event => {
     const target = userInput.value;
 
     $(".Show_Container").remove() // This will Remove the element inside
+   
     if (target) {
       show1({ target });
     }

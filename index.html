@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="CSS/SEC-3/B.css">
 <link rel="stylesheet" href="CSS/SEC-5/ThisSeason.css">
 <link rel="stylesheet" href="CSS/btn2.css">
+<link rel="stylesheet" href="CSS/Loading.css">
 <link rel="stylesheet" href="CSS/Footer/footer.css">
 <link rel="stylesheet" media="(max-width:500px)" href="Phone/Normal-Phone.css">
 <body>
@@ -39,7 +40,7 @@
     </div> -->
     <div id="btn-Wapper" class="Click-close">
       <!-- <div id="Click"></div> -->
-      <div class="switch">
+      <div class="switch ">
         <input type="checkbox">
         <div>
           <span class="line-1"></span>
@@ -100,8 +101,8 @@
         </div>
       </div>
     </section>
-
-
+  
+    
     <!--View More Container -->
     <section id="SEC-4">
       <div id="SEC-4-View-More" class="View__More-Container">
@@ -227,7 +228,7 @@
       <div class="Wapper-Contain">
         <div class="Trending-Container">
   
-          <h2 class="Trending">All tiMe fAVourites</h2>
+          <h2 class="Trending" id="ThisS">All tiMe fAVourites</h2>
           <button class="View" id="Color_O"> View More</button>
         </div>
         <div id="Trending-info-wapper-2">
@@ -254,24 +255,42 @@
   
   </section>
 
- 
+ <!-- <section style="width: 100vw; height: 100vh; display: flex; justify-content: center; 
+ align-items: center;">
+
+
+  <div class="Holder card " data-aos="zoom-in">
+  <div class="IMGholder Skeleton" style="background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg);">
+  </div>
+  <div class="card__content">
+    <p class="card__title">${Name_AnimeE || Name_Anime}</p>
+    <p class="card__description">${des}</p>
+    <p class="card__Status extra1 ALL"><b>Status:</b> ${status} , ${season} ${Year}</p>
+    <p class="card__Gen extra2 ALL"><b>Genre:</b> ${gen[1] || gen[0] || gen[2] || gen[3]}, ${gen[0]}, ${gen[2]} </p>
+    <p class="card__Popularity extra3 ALL"><b>Popularity:</b> ${avg} &#128516 </p>
+
+  </div>
+    <div id="Anime-Name-Wapper" class="Skeleton">
+      <h2 class="Anime-Headline ">Demon Slayer: Kimetsu no Yaiba</h2>
+    </div>
+  </div>
+ </section> -->
 
     <!-- Bar -->
     <footer id="footer">
       <h4 id="h4"> Created by - Raghav Shrivastava</h4>
     </footer>
-
   </main>
-
   <script src="JS/code.jquery.com_jquery-3.7.0.min.js"></script>
+  
   <script type="module" src="JS/Type_Anime.js"></script>
   <script type="module" src="JS/Type-Manga.js"></script>
   <script src="JS/Type_Search.js"></script>
   <script src="JS/SearchAnimation.js"></script>
   <script type="module" src="JS/View-More.js"></script>
-  
+ 
   <script type="module" src="JS/Type_Popular.js"></script>
-  <script type="module" src="JS/Type_All_Time.js"></script>
+  <script cript type="module" src="JS/Type_All_Time.js"></script>
   <script type="module" src="JS/View-More-Manga.js"></script>
   <script type="module" src="JS/View-More-Popular.js"></script>
   <script type="module" src="JS/View-More-All-Time.js"></script>

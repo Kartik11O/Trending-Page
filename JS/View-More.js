@@ -1,4 +1,4 @@
-import { query , variables  } from "../componentss/Api.js";
+import { query, variables } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
 
@@ -44,6 +44,8 @@ function View(_variables) {
       }
     })
   })
+  // Adding_Holder()
+
 
 
 
@@ -51,28 +53,39 @@ function View(_variables) {
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
-
-      Data.map((items) => {
+      console.log(Data)
+      Data.map(items => {
+        // let Poster_Anime = res.data.Page.media.coverImage.extraLarge
         let Poster_Anime = items.coverImage.extraLarge
         let Name_AnimeE = items.title.english
-        let Name_Anime = items.title.romaji
-        let Year = items.startDate.year
-        let status = items.status
-        let season = items.season
+        // let Photos = [Poster_Anime]
+        // console.log(Photos)    
+        let array = ['https://i.pinimg.com/564x/f4/f9/c3/f4f9c3fecddc0937a738f64d632107b8.jpg',
+        'https://i.pinimg.com/564x/7c/5e/1e/7c5e1e2d96ce1dd6aaafe6e926031a48.jpg', 
+        'https://i.pinimg.com/736x/2f/5b/7b/2f5b7b1c97b7bcb5a073f3cf8f5d9a96.jpg', 
+        'https://i.pinimg.com/564x/f6/13/b1/f613b10a22a2d162ed046402e8cb1213.jpg', 
+        'https://i.pinimg.com/564x/70/d5/83/70d5839175c450635d360e07ad1629ac.jpg', 
+        'https://i.pinimg.com/564x/f4/f9/c3/f4f9c3fecddc0937a738f64d632107b8.jpg', 
+        'https://i.pinimg.com/564x/f4/f9/c3/f4f9c3fecddc0937a738f64d632107b8.jpg', 
+      ]
+      // let names = ['raghav','binu']
+    
+      let Name_Anime = items.title.romaji
+      let Year = items.startDate.year
+      let status = items.status
+      let season = items.season
         let avg = items.averageScore
         let gen = items.genres
         let des = items.description
-
         // This remove the <Br> in card description
         $('.card__description').each(function () {
           $(this).html($(this).html().split('<br>')[0]);
         });
-
-        // Here API Data make design
-        let container = ` 
+        
+        let Pic_Container = ` 
       <div class="Holder card" data-aos="zoom-in">
       <div class="card__content">
-      <p class="card__title">${Name_AnimeE || Name_Anime}</p>
+      <p class="card__title">${ Name_AnimeE || Name_Anime}</p>
       <p class="card__description">${des}</p>
       <p class="card__Status extra1 ALL"><b>Status:</b> ${status} , ${season} ${Year}</p>
       <p class="card__Gen extra2 ALL"><b>Genre:</b> ${gen[1] || gen[0] || gen[2] || gen[3]}, ${gen[0]}, ${gen[2]} </p>
@@ -82,19 +95,45 @@ function View(_variables) {
     <div class="IMGholder" style="background-image: url(${Poster_Anime});">
     </div>
 
-       <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
-       <span class="Anime-GEN">${gen[0]}</span>
-       <span class="Anime-GEN">${gen[1]}</span>
-       <span class="Anime-GEN">${gen[2]}</span>
+    <div id="Anime-Name-Wapper">
+    <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
+  </div>
+     
 
     </div>
     
        `
-        // Added the Api Data to HTML
-        document.getElementById("Row-3").innerHTML += container
+       document.getElementById("Row-3").innerHTML += Pic_Container
 
+      //   let divElement = document.querySelectorAll(".IMG_2")
+      //   // console.log(divElement)
+      //   divElement.forEach((divElement, index ) => {
+      //     // Get the corresponding image URL based on index (assuming order matches)
+      //     const imageUrl =  array[index];
+      
+      //     // Set the background image of the div
+      //     // divElement.style.backgroundImage = `url('${imageUrl}')`;
+      
+      //     // Get the img element inside the div
+      //     const imgElement = divElement.querySelector("img[data-pic]");
+      //     console.log(imgElement)
+      //     // Set the src attribute of the img element
+      //     imgElement.src = imageUrl;
+      //   });
+      // //   Photos.forEach(el6 =>{
+      // //     $(".IMG_2").prepend('<img class="imageClass" src='+ el6 + '>')
+      // // })
+
+      
       })
+
+
     })
+
+
+
+
+
 
 }
 
@@ -151,4 +190,53 @@ function isAtBottom() {
 View(variables);
 
 
+function Adding_Holder() {
+  for (let i = 0; i < 10; i++) {
 
+    let container = ` 
+    <div id="test" class="Holder card" data-aos="zoom-in">
+    <div class="card__content">
+    <p class="card__title">{Name_AnimeE || Name_Anime}</p>
+    <p class="card__description">{des}</p>
+    <p class="card__Status extra1 ALL"><b>Status:</b> {status} , {season} {Year}</p>
+    <p class="card__Gen extra2 ALL"><b>Genre:</b> {gen[1] || gen[0] || gen[2] || gen[3]}, {gen[0]}, {gen[2]} </p>
+    <p class="card__Popularity extra3 ALL"><b>Popularity:</b> {avg} &#128516 </p>
+
+  </div>
+  <div id="test1"  class="IMGholder IMG_2 Skeleton" style="background-image: url();">
+  <img class="adding" src="" alt="" data-pic> 
+  </div>
+
+  <div id="Anime-Name-Wapper" class="Skeleton">
+  <h2 class="Anime-Headline">{Name_AnimeE || Name_Anime}</h2>
+</div>
+  </div>
+  
+     `
+    // Added the Api Data to HTML
+    document.getElementById("Row-3").innerHTML += container
+  }
+}
+
+
+// let Pic_Container = `
+// <div class="Holder card" data-aos="zoom-in">
+// <div class="card__content">
+// <p class="card__title">${ Name_AnimeE || Name_Anime}</p>
+// <p class="card__description">${des}</p>
+// <p class="card__Status extra1 ALL"><b>Status:</b> ${status} , ${season} ${Year}</p>
+// <p class="card__Gen extra2 ALL"><b>Genre:</b> ${gen[1] || gen[0] || gen[2] || gen[3]}, ${gen[0]}, ${gen[2]} </p>
+// <p class="card__Popularity extra3 ALL"><b>Popularity:</b> ${avg} &#128516 </p>
+
+// </div>
+// <div class="IMGholder" style="background-image: url(${Poster_Anime});">
+// </div>
+
+// <div id="Anime-Name-Wapper">
+// <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
+// </div>
+
+
+// </div>
+
+// `  

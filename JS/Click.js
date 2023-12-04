@@ -1,4 +1,4 @@
-$("#btn-Wapper").on('click' , ()=>{
+$(".switch").on('click' , ()=>{
     $("#btn-Wapper").addClass('Click-Open')
     $("#btn-Wapper").toggleClass('Click-close')
 

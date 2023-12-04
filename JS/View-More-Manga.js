@@ -84,10 +84,9 @@ function Manga(_variables) {
       <div class="IMGholder" style="background-image: url(${Poster_Anime});">
       </div>
   
-         <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
-         <span class="Anime-GEN">${gen[0]}</span>
-         <span class="Anime-GEN">${gen[1]}</span>
-         <span class="Anime-GEN">${gen[2]}</span>
+      <div id="Anime-Name-Wapper">
+      <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
+    </div>
   
       </div>
       
@@ -145,9 +144,11 @@ function Manga(_variables) {
       $(".View__More-Container").css({
         marginBottom: '5rem'
       })
-      variables.page++;
-      Manga(variables);
-      console.log("calling")
+        variables.page++;
+        Manga(variables);
+        console.log("calling")
+
+    
   
     }
   }

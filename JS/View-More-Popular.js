@@ -82,10 +82,9 @@ function Popular(_variables) {
     <div class="IMGholder" style="background-image: url(${Poster_Anime});">
     </div>
 
-       <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
-       <span class="Anime-GEN">${gen[0]}</span>
-       <span class="Anime-GEN">${gen[1]}</span>
-       <span class="Anime-GEN">${gen[2]}</span>
+    <div id="Anime-Name-Wapper">
+    <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
+  </div>
 
     </div>
     
