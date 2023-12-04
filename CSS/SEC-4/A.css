@@ -30,8 +30,8 @@
     color: #fff;
     border: none;
     text-align: center;
-    width: 45px;
-    height: 45px;
+    width: clamp(101px,10vw,101px);
+    height: clamp(44px,6vh,44px);
     line-height: 0px;
     font-size: 1.4rem;
     cursor: pointer;

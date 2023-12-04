@@ -1,5 +1,8 @@
+
+
 html{
     font-size: 50%;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 /* It Sets the Sociall Icons (Start) */
@@ -27,7 +30,7 @@ html{
     width: clamp(72px,6vw,78px);
     height: clamp(29px,3vh,30px);
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 600;
     border: 1px solid black;
 }
 
