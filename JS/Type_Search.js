@@ -1,7 +1,5 @@
-// import {variables , query } from "/components/Api.js";
-
 function show1({ target }) {
-  var query = `
+  let query = `
   query ($page: Int, $perPage: Int, $search: String) {
       Page(page: $page, perPage: $perPage) {
         pageInfo {
@@ -68,7 +66,7 @@ function show1({ target }) {
       }
     }
   `
-  var variables = {
+  let variables = {
     search: target,
     id: 15125,
     page: 1,

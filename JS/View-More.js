@@ -1,4 +1,4 @@
-import { query, variables } from "../componentss/Api.js";
+// import { query, variables } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
 
@@ -105,24 +105,24 @@ function View(_variables) {
        `
        document.getElementById("Row-3").innerHTML += Pic_Container
 
-      //   let divElement = document.querySelectorAll(".IMG_2")
-      //   // console.log(divElement)
-      //   divElement.forEach((divElement, index ) => {
-      //     // Get the corresponding image URL based on index (assuming order matches)
-      //     const imageUrl =  array[index];
+        let divElement = document.querySelectorAll(".IMG_2")
+        // console.log(divElement)
+        divElement.forEach((divElement, index ) => {
+          // Get the corresponding image URL based on index (assuming order matches)
+          const imageUrl =  array[index];
       
-      //     // Set the background image of the div
-      //     // divElement.style.backgroundImage = `url('${imageUrl}')`;
+          // Set the background image of the div
+          // divElement.style.backgroundImage = `url('${imageUrl}')`;
       
-      //     // Get the img element inside the div
-      //     const imgElement = divElement.querySelector("img[data-pic]");
-      //     console.log(imgElement)
-      //     // Set the src attribute of the img element
-      //     imgElement.src = imageUrl;
-      //   });
-      // //   Photos.forEach(el6 =>{
-      // //     $(".IMG_2").prepend('<img class="imageClass" src='+ el6 + '>')
-      // // })
+          // Get the img element inside the div
+          const imgElement = divElement.querySelector("img[data-pic]");
+          console.log(imgElement)
+          // Set the src attribute of the img element
+          imgElement.src = imageUrl;
+        });
+      //   Photos.forEach(el6 =>{
+      //     $(".IMG_2").prepend('<img class="imageClass" src='+ el6 + '>')
+      // })
 
       
       })

@@ -1,4 +1,4 @@
-import {variables_5 , query3 } from "../componentss/Api.js";
+import {variables , query } from "../componentss/Api.js";
 
   
 let Popular = fetch(`https://graphql.anilist.co`,{
@@ -8,11 +8,8 @@ let Popular = fetch(`https://graphql.anilist.co`,{
             'Accept': 'application/json',
           },
           body: JSON.stringify({
-            query: query3,
-            variables: variables_5,
-            Media: {
-              Type: 'Anime'
-            }
+            query: query,
+            variables: variables,
           })
     
 })

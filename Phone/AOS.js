@@ -1,5 +1,5 @@
-if(screen.width < 600){
+if(screen.width < 800){
     AOS.init({
-        disable: true,
+        disable: true
       });
 }
