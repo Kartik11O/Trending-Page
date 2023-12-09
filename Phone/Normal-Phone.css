@@ -154,3 +154,23 @@ html{
 .LI99 a {
     font-weight: 500;
 }
+
+.SVG-1{
+    width: 28px;
+}
+.SVG-2{
+    width: 23px;
+}
+
+.layer span.fab {
+    line-height: 48px;
+}
+
+.layer {
+    width: clamp(37.51px,10vw,37.51px);
+    height: clamp(39.36px,5.9vh,39.36px);
+}
+
+.tooltip{
+    display: none;
+}

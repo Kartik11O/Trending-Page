@@ -1,4 +1,4 @@
-@media all and (min-width: 639px) and (max-width: 1023px) and (orientation: landscape){
+@media all and (min-width: 1024px) and (max-width: 1439px) and (orientation: landscape){
     html{
         font-size: 50%;
     }
@@ -24,18 +24,17 @@
     /* (End) */
     
     .View {
-        margin-right: 1rem;
-        width: clamp(72px,6vw,78px);
-        height: clamp(29px,3vh,30px);
-        font-size: 1.3rem;
-        font-weight: 500;
-        border: 1px solid black;
+        margin-right: 6rem;
+        width: clamp(94.4px,8vw,94.4px);
+        height: clamp(34.44px,4.2vh,34.44px);
+        font-size: 1.7rem;
+        border: 2px solid black;
     }
     
     .Trending{
-        font-size: 2.4rem;
+        font-size: 4rem;
         font-weight: 600;
-        width: clamp(202px,54vw,202px);
+        width: clamp(389px,33vw,389px);
         border-bottom: 1px solid black;
     }
     
@@ -133,7 +132,7 @@
     }
     
     .Anime-Headline {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     
     .Anime-GEN {
@@ -149,8 +148,13 @@
         font-size: 1.4rem;
     }
 
+
     #Headline11 {
-        /* font-size: 5rem; */
+        font-size: 7rem;
+    }
+
+    #Headline {
+        width: clamp(322px,21vw,322px);
     }
 
     .SVG-1{
@@ -172,5 +176,6 @@
     .tooltip{
         display: none;
     }
+    
     
 }

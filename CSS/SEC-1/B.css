@@ -81,13 +81,13 @@ transform: translateY(-10px);
 color: #fff;
 }
 
-.LI__I:nth-child(1) a:hover{
+.LI__I:nth-child(1) a:hover {
     background-color:  #c9510c;
 }
 .LI__I:nth-child(2) a:hover{
     background-color: #0a66c2;
 }
-.LI__I:nth-child(3) a:hover{
+.LI__I:nth-child(3) a:hover {
     
     background: linear-gradient(
         45deg,
