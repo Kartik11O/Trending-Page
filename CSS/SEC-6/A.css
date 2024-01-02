@@ -1,0 +1,393 @@
+#SEC-6 {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+
+}
+
+#Search_Bar::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(IG-2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* opacity: 0.8; */
+  /* filter: drop-shadow(5px 5px 6px black);
+  filter: hue-rotate(339deg);
+  box-shadow: 5px 5px 6px black; */
+}
+
+/* #SEC-6::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+#SEC-6::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.6;
+  background-image: url(ghoul.jpg);
+  background-size: contain;
+  background-position: center;
+  filter: blur(7px);
+} */
+
+#TEST {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+#Search_Bar {
+  width: 100%;
+  height: 45vh;
+  background-color: #000000a1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  border-bottom: 3px solid black;
+}
+
+
+
+.input-container {
+  width: 220px;
+  position: relative;
+}
+
+.icon_SpaceBar {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  transition: .2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px #000000;
+}
+
+.input-container:hover>.icon {
+  animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
+  }
+}
+
+#Input-Wapper {
+  position: relative;
+  width: 36vw;
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+
+}
+
+#Content-Wapperr {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  /* border: 2px solid red; */
+  z-index: 1;
+  gap: 15px;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: 0.3s;
+  margin-bottom: 4rem;
+}
+
+
+
+
+
+
+
+
+.form {
+  /* width: 98%; */
+  /* height: clamp(410px,55vh,410px); */
+  /* width: 74vw; */
+  /* height: 53vh; */
+  /* display: flex; */
+  /* box-shadow: 85px 9px 6px -1px rgba(0,0,0,0.1), 0px 3px 11px -1px rgba(0,0,0,0.06); */
+  /* border-radius: 25px; */
+  /* animation: Loading 0.6s both; */
+  /* --input-focus: #2d8cf0; */
+  /* --font-color: #323232; */
+  /* --font-color-sub: #666; */
+  --bg-color: beige;
+  --main-color: black;
+  padding: 20px;
+  background: #F9F6EE;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  width: 74vw;
+  height: 53vh;
+  margin-left: 1rem;
+}
+
+
+.Card {
+  position: relative;
+  width: 28vw;
+  width: 38vw;
+  height: max-content;
+  --main-color: black;
+  /* border: 2px solid var(--main-color); */
+  /* box-shadow: 4px 4px #000000; */
+  background: #add8e6;
+  background: transparent;
+  transition: 0.3s;
+  /* border-right: 2px solid #000; */
+  /* color: #bbb; */
+  /* filter: drop-shadow(2px 4px 6px black); */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+}
+/* D-1 */
+/* .Card {
+  position: relative;
+  width: 28vw;
+  height: max-content;
+  --main-color: black;
+  /* border: 2px solid var(--main-color); */
+  /* box-shadow: 4px 4px #000000;
+  background: #add8e6;
+  background: transparent;
+  transition: 0.3s; */
+  /* border-right: 2px solid #000; */
+  /* color: #bbb;
+} */
+/* D-2 */
+/* .Card {
+  position: relative;
+  width: 28vw;
+  height: max-content;
+  --main-color: black;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background: #add8e6;
+   background: #383741;
+  transition: 0.3s;
+  color: #bbb;
+} */
+/* background: #383741; 
+background: #317773;
+*/
+/* color: #fff; */
+.Card__Wapper__IMG {
+  width: 62%;
+  width: 45%;
+  height: 50vh;
+  background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  --main-color: black;
+  /* border: 2px solid var(--main-color); */
+  /* box-shadow: 4px 4px #000000; */
+  margin-bottom: 0px;
+  border-radius: 8px;
+}
+
+
+.Card__Info {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 91%;
+  height: 20vh;
+  padding: 9px 15px;
+  overflow-y: scroll;
+}
+
+.Card__P {
+  margin: 0;
+}
+
+.Card__Holder {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+}
+
+.Card__Gen {
+  width: 10.9vw;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Card__BTNS {
+  width: 9vw;
+  height: 4vh;
+  --main-color: black;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px #000000;
+  margin-top: 1rem;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  /* font-family: 'Staatliches', sans-serif; */
+  font-family: var(--Headline);
+  text-align: center;
+  padding-top: 7px;
+}
+
+.Card__Headline__Wapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.Card__h1 {
+  margin: 0;
+  /* font-family: 'Staatliches', sans-serif; */
+  font-family: var(--Headline);
+  letter-spacing: 2px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  padding-top: 22px;
+  width: 23vw;
+  line-height: 24px;
+  /* border-radius: 2px 0px 12px 12px; */
+}
+
+.Card__h1::before {
+  position: absolute;
+  bottom: 6px;
+  left: 26px;
+  content: "";
+  width: 86%;
+  height: 5px;
+  /* background-color: #000; */
+  border-radius: 21px 0px 23px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .Card {
+  position: relative;
+  width: 45vw;
+  height: 81vh;
+  --main-color: black;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background: #28282B;
+  color: #bbb;
+}
+.Card__Wapper__IMG {
+  width: 37%;
+  height: 48vh;
+  background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  --main-color: black;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px #599946;
+  margin-bottom: 0px;
+}
+.Card__Headline__Wapper {
+  width: 100%;
+  height: 9vh;
+  width: 100%;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+} */
+
+
+
+/*  <div class="Card" data-aos="zoom-in-up">
+<div class="Card__Headline__Wapper">
+  <h1 class="Card__h1">${nameE || namee}</h1>
+</div>
+
+
+<div class="Card__Info">
+  <p class="Card__P">${des}</p>
+</div>
+
+<div class="Card__Holder">
+  <div class="Card__Wapper__IMG" style=" background-image: url(${imagee});"></div>
+  <div class="Card__Gen">
+    <div class="Card__BTNS"><b>Average Score:</b> ${avg}</div>
+    <div class="Card__BTNS"><b>Status:</b> ${status} </div>
+    <div class="Card__BTNS"><b>Episodes:</b> ${ep} </div>
+    <div class="Card__BTNS">Start Date:</b> ${day}-${month}-${year} </div>
+    <div class="Card__BTNS"><b>End Date:</b> ${eday}-${emonth}-${eyear} </div>
+  </div>
+</div>
+
+</div>
+
+*/

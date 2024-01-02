@@ -91,6 +91,11 @@ function show1({ target }) {
 
   })
 
+
+  
+  
+  
+  
   console.log(target.value)
   SS.then((reqq) => reqq.json())
     .then((gett) => {
@@ -110,39 +115,71 @@ function show1({ target }) {
         let eday = items4.endDate.day
         let emonth = items4.endDate.month
         let eyear = items4.endDate.year
+        let gen = items4.genres
+       
         $('.Show_About').each(function () {
           $(this).html($(this).html().split('<br>')[0]);
         });
-        let container =
-          `
-          <div class="Show_Container" >
+      
+
+        let container = `
+        <div class="Show_Container" >
         <div id="Show_Img" style=" background-image: url(${imagee});"></div>
         <div id="Show_details">
           <h2 class="Show_Names">${nameE || namee}</h2>
           <p class="Show_About">${des}</p>
           <p class="Show_info"><b>Average Score:</b> ${avg} &#128516</p>
           <p class="Show_info"><b>Status:</b> ${status}</p>
-          <p class="Show_info"><b>Episodes:</b> ${ep}</p>
+          <p class="Show_info"><b>Episodes:</b> ${ep || "NOT YET RELEASED"}</p>
           <p class="Show_info"><b>Start Date:</b> ${day}-${month}-${year}</p>
           <p class="Show_info"><b>End Date:</b> ${eday}-${emonth}-${eyear}</p>
+          <span class="Gen" id="test"> ${gen[0]}</span> 
+          <span class="Gen" id="test"> ${gen[1]}</span> 
+          <span class="Gen" id="test"> ${gen[2]}</span>
+          <span class="Gen" id="test"> ${gen[3]}</span>
+          <span class="Gen" id="test"> ${gen[4]}</span>
         </div>
       </div>
-    
     `
-        document.getElementById("Show1_Container").innerHTML += container
+  
+    
+        document.getElementById("Content-Wapperr").innerHTML += container
       })
-    })
+      let col = ['#F277AF' , '#2ECFDB' , '#FEE561' ]
+      let math = Math.floor(Math.random() * 3)
+      console.log(math)
+      if(math == 1){
+        $(".Gen").css({
+          "background-color": "#F277AF"
+        })
+      }
+      else if(math == 2){
+        $(".Gen").css({
+          "background-color": "#2ECFDB"
+        })
+      }
+      else if(math == 0){
+        $(".Gen").css({
+          "background-color": "#FEE561"
+        })
+      }
+
+    // let gen = document.querySelectorAll('.Gen');
+
+    // gen.forEach(color => {
+    //   math = color
+    //   `background-color: ${color}`
+    // });
 
 
+})
 
 }
+
 
 let userInput = document.getElementById("Search_bar")
 let target = userInput.value
 let searchBtn = document.getElementById("myBtn").addEventListener('click', show1)
-
-
-
 
 
 userInput.addEventListener('keypress', event => {
@@ -150,17 +187,12 @@ userInput.addEventListener('keypress', event => {
     const target = userInput.value;
 
     $(".Show_Container").remove() // This will Remove the element inside
-   
+
     if (target) {
       show1({ target });
     }
   }
 });
-
-
-
-
-
 
 
 

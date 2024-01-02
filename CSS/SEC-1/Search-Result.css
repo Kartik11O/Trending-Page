@@ -36,6 +36,7 @@
     margin-left: 1rem;
     font-size: 1.5rem;
     margin-bottom: 0;
+    border-bottom: 2px solid black;
 }
 
 .Show_About{
@@ -83,3 +84,22 @@
       transform: rotate(360deg);
     }
   }
+
+  .Gen{
+    font-family: var(--Headline);
+    /* background: #2ECFDB; */
+    /* background-color: rgb(150, 25, 25); */
+    width: max-content;
+    height: 28px;
+    border-radius: 22px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 1rem;
+    line-height: 28px;
+    /* color: #fff; */
+    border: 1px solid black;
+    box-shadow: 4px 4px #000000;
+    margin-top: 2px;
+    padding: 1px 19px;
+  }
+  

@@ -31,7 +31,7 @@ Anime.then((DataReq) => DataReq.json())
     console.log(popularity, 'popularity')
 
     // Here Maped the Data
-    
+
     Anime.map(items => {
       let Poster_Anime = items.coverImage.extraLarge
       let Name_AnimeE = items.title.english
@@ -73,7 +73,7 @@ Anime.then((DataReq) => DataReq.json())
 
       // Added the Api Data to HTML
       document.getElementById("Row-1").innerHTML += anime
-      document.getElementById("Row-3").innerHTML += anime
+
 
     })
 
@@ -87,7 +87,7 @@ Anime.then((DataReq) => DataReq.json())
       let avg = items_M.averageScore
       let gen = items_M.genres
       let des = items_M.description
-
+  
       // This remove the <Br> in card description
       $('.card__description').each(function () {
         $(this).html($(this).html().split('<br>')[0]);
@@ -207,63 +207,9 @@ Anime.then((DataReq) => DataReq.json())
 
     })
 
-
-
   })
 
 
-// }
 
 
 
-  const targetElement = document.getElementById('SEC-4');
-
-  // Define the callback function to be executed when the element is visible
-  function handleVisibility(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // The target element is fully or partially visible
-        // Execute your function here
-        isAtBottom();
-        window.addEventListener('scroll', isAtBottom);
-        // Stop observing if needed
-        observer.unobserve(targetElement);
-      }
-    });
-  }
-  
-  // Create an Intersection Observer
-  const observer = new IntersectionObserver(handleVisibility, {
-    root: null, // Use the viewport as the root
-    rootMargin: '0px', // No margin
-    threshold: 0.1, // Trigger when at least 10% of the target is visible
-  });
-  
-  // Start observing the target element
-  observer.observe(targetElement);
-  
-  
-  function isAtBottom() {
-  
-    // Calculate the current scroll position
-    const windowHeight = window.innerHeight; // Height of the viewport
-    const documentHeight = document.documentElement.scrollHeight; // Total height of the document
-    const scrollPosition = window.scrollY; // Current vertical scroll position
-  
-    // Define a threshold (e.g., 10 pixels) to trigger the action
-    const threshold = 2;
-  
-    // Check if the user has reached the bottom
-    if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
-      // The user has reached the bottom of the window, do something here
-  
-      variables.page++;
-      View(variables);
-      console.log("calling")
-  
-    }
-  }
-   
-
-
-// View(variables);
