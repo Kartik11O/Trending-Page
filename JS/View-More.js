@@ -14,6 +14,8 @@ $("#trending").on('click', () => {
   $("#SEC-2").fadeOut()
   $("#SEC-3").fadeOut()
   $("#SEC-5").fadeOut()
+  $("#SEC-6").fadeOut()
+  $("#footer").fadeOut()
 
 })
 // This Close the View More
@@ -23,6 +25,7 @@ $(".View-Back").on('click', () => {
   $("#SEC-2").fadeIn()
   $("#SEC-3").fadeIn()
   $("#SEC-5").fadeIn()
+  $("#footer").fadeIn()
 })
 var query = `
 query ($page: Int, $perPage: Int, $search: String) {
@@ -104,8 +107,10 @@ let allSeason = [];
 let allYear = [];
 let allStatus = [];
 let allDescription = [];
-let allGen = [];
+let allGen = [ ];
 let allAvg = [];
+
+
 
 // Start Fetching the Api Data
 function View(variables) {
@@ -130,6 +135,7 @@ function View(variables) {
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
+  
       Data.map(items => {
 
         let Poster_Anime = items.coverImage.extraLarge
@@ -154,9 +160,7 @@ function View(variables) {
         allDescription.push(des)
         allGen.push(gen)
         allAvg.push(avg)
-
-
-
+        // console.log(allSeason)
       })
 
       // FlatMap Area (STARTING)
@@ -176,16 +180,28 @@ function View(variables) {
       const All_Card_Content = document.querySelectorAll(".card__content");
 
 
-
- 
-
+      function replaceStringIfKeywordMatched(allStatus, keyword, replacement) {
+        for (let i = 0; i < allStatus.length; i++) {
+          if (allStatus[i].includes(keyword)) {
+            allStatus[i] = allStatus[i].replace(keyword, replacement);
+          }
+        }
+      }
+      
+      // Example usage:
+      let keywordToMatch = "NOT_YET_RELEASED";
+      let replacementString = "Not Released";
+      
+      replaceStringIfKeywordMatched(allStatus, keywordToMatch, replacementString);
+      
       // This Function Update the Element by sending the Data to Foreach
       function UpdateTheElement(divElement, index) {
         const imageUrl = allCoverImages[index];
         const imgElement = divElement.querySelector("img[data-pic]");
 
         let Description_Removed_Tag = allDescription.map(str => str.replace(/<br>|<i>/g, '')); // This will remove any <br> tag or <i> tag.
-
+      
+        // Card Name Headline
         const headline = AnimeHeadlines[index]; // THE MAIN NAME variable
         const Card = All_Card_Content[index]; // This Provide Variable to all content related
 
@@ -196,7 +212,7 @@ function View(variables) {
         // Card Inside Headline Name (On Hover)
         const Card_Name = allNames[index];
         const p_Card_H1 = Card.querySelector("p[data-Card-Headline]");
-        console.log(p_Card_H1)
+       
         // Card Season
         const Winter = allSeason[index];
         const span_Season = Card.querySelector(" span[data-Season]");
@@ -220,7 +236,7 @@ function View(variables) {
         // Card Avg Score
         const Avg = allAvg[index]
         const span_Avg = Card.querySelector("span[data-avg]")
-        console.log()
+     
 
         setTimeout(() => {
           divElement.classList.add('fadeIn');
@@ -304,15 +320,15 @@ function Adding_Holder() {
         <div class="card__content">
           <p class="card__title" data-Card-Headline="YourMainName"></p>
           <p class="card__description" data-des = "YourDescription"></p>
-          <p class="card__Status extra1 ALL"><b>Status:</b> <span data-status = "HereStatus"></span> ,<span data-Season = "HereSeason"></span>  <span data-Year = "Year"></span></p>
-          <p class="card__Gen extra2 ALL" > <b>Genre:</b> <span data-gen = "Yourgen"></span> </p>
+          <p class="card__Status extra1 ALL"><b>Status:</b> <span data-status = "HereStatus"></span> , <span data-Season = "HereSeason"></span>  <span data-Year = "Year"></span></p>
+          <p class="card__Gen extra2 ALL" > <b>Genre:</b> <span data-gen = " Yourgen "> </span> </p>
           <p class="card__Popularity extra3 ALL"><b>Popularity:</b> <span data-avg ="Youravg"></span>% &#128516 </p>
         </div>
         <div id="test1" class="IMGholder IMG_2 Skeleton" >
           <img class="AllImg" src=""  data-pic> 
         </div>
         <div id="Anime-Name-Wapper" class="Skeleton Anime-Name-Wapper">
-        <h2 class="Anime-Headline" data-name="YourDataNameHere"></h2>
+        <h2 class="Anime-Headline" data-name="YourDataNameHere">  </h2>
         </div>
       </div>`;
 

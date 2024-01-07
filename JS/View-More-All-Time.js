@@ -1,4 +1,4 @@
-import { query4 , variables  } from "../componentss/Api.js";
+import { queryA , variables  } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
 
@@ -16,6 +16,8 @@ $("#Color_B").on('click', () => {
   $("#SEC-2").fadeOut()
   $("#SEC-3").fadeOut()
   $("#SEC-5").fadeOut()
+  $("#footer").fadeOut()
+
 
 })
 // This Close the View More
@@ -25,8 +27,18 @@ $("#View-Back-Time").on('click', () => {
   $("#SEC-2").fadeIn()
   $("#SEC-3").fadeIn()
   $("#SEC-5").fadeIn()
+  $("#footer").fadeIn()
 })
 
+// Array of Manga Content
+let allCoverImages_All_Time = [];
+let allNames_All_Time = [];
+let allSeason_All_Time = [];
+let allYear_All_Time = [];
+let allStatus_All_Time = [];
+let allDescription_All_Time = [];
+let allGen_All_Time = [];
+let allAvg_All_Time = [];
 
 // Start Fetching the Api Data
 function Time(_variables) {
@@ -37,7 +49,7 @@ function Time(_variables) {
       'Accept': 'application/json',
     },
     body: JSON.stringify({
-      query: query4,
+      query: queryA,
       variables: variables,
       Media: {
         Type: 'Anime'
@@ -45,7 +57,7 @@ function Time(_variables) {
     })
   })
 
-
+  Adding_Holder_ALL_Time()
 
   api.then((req) => req.json())
     .then((res) => {
@@ -68,31 +80,99 @@ function Time(_variables) {
           $(this).html($(this).html().split('<br>')[0]);
         });
 
-        // Here API Data make design
-        let container = ` 
-      <div class="Holder card" data-aos="zoom-in">
-      <div class="card__content">
-      <p class="card__title">${Name_AnimeE || Name_Anime}</p>
-      <p class="card__description">${des}</p>
-      <p class="card__Status extra1 ALL"><b>Status:</b> ${status} , ${season} ${Year}</p>
-      <p class="card__Gen extra2 ALL"><b>Genre:</b> ${gen[1] || gen[0] || gen[2] || gen[3]}, ${gen[0]}, ${gen[2]} </p>
-      <p class="card__Popularity extra3 ALL"><b>Popularity:</b> ${avg} &#128516 </p>
+        allSeason_All_Time.push(season);
+        allYear_All_Time.push(Year)
+        allStatus_All_Time.push(status)
+        allDescription_All_Time.push(des)
+        allGen_All_Time.push(gen)
+        allAvg_All_Time.push(avg)
 
-    </div>
-    <div class="IMGholder" style="background-image: url(${Poster_Anime});">
-    </div>
-
-    <div id="Anime-Name-Wapper">
-    <h2 class="Anime-Headline">${Name_AnimeE || Name_Anime}</h2>
-  </div>
-
-    </div>
-    
-       `
-        // Added the Api Data to HTML
-        document.getElementById("Row-8").innerHTML += container
-
+        
       })
+        // FlatMap Area (STARTING)
+        let newCoverImages_All_Time = Data.flatMap(item => item.coverImage.extraLarge);
+        allCoverImages_All_Time = allCoverImages_All_Time.concat(newCoverImages_All_Time);
+        // console.log('Updated Image:', allCoverImages_Manga);
+  
+        let AnimeName = Data.flatMap(item => item.title.english);
+        allNames_All_Time = allNames_All_Time.concat(AnimeName);
+        // console.log('Updated Name:', allNames);
+  
+      // Defining Variable (START)
+      let divElements = document.querySelectorAll(".IMG_All_Time");
+      let AnimeHeadlines = document.querySelectorAll(".Anime-Name-Wapper-All-Time");
+      let All_Card_Content = document.querySelectorAll(".All_Time");
+
+
+      // This Function Update the Element by sending the Data to Foreach
+      function UpdateTheElement_All_Time(divElement, index) {
+        const imageUrl_All_Time = allCoverImages_All_Time[index];
+        const imgElement_All_Time = divElement.querySelector("img[data-pic-All-Time]");
+
+        // let Description_Removed_Tag_Manga = allDescription_Manga.map(str => str.replace(/<br>|<i>/g, '')); // This will remove any <br> tag or <i> tag.
+    
+        // Card Name Headline
+        const headline_All_Time = AnimeHeadlines[index]; // THE MAIN NAME variable
+        const Card_All_Time = All_Card_Content[index]; // This Provide Variable to all content related
+        
+        // Card Main Name
+        const Name_All_Time = allNames_All_Time[index];
+        const h1Element_All_Time = headline_All_Time.querySelector("h2[data-name-All-Time]");
+
+        // Card Inside Headline Name (On Hover)
+        const Card_Name_All_Time = allNames_All_Time[index];
+        const p_Card_H1_All_Time = Card_All_Time.querySelector("p[data-Card-Headline-All-Time]");
+     
+        // Card Season
+        const Winter_All_Time = allSeason_All_Time[index];
+        const span_Season_All_Time = Card_All_Time.querySelector(" span[data-Season-All-Time]");
+
+        // Card Year
+        const Year_All_Time = allYear_All_Time[index]
+        const span_Year_All_Time = Card_All_Time.querySelector("span[data-Year-All-Time]");
+ 
+        // Card Status
+        const Status_All_Time = allStatus_All_Time[index]
+        const span_Status_All_Time = Card_All_Time.querySelector("span[data-status-All-Time]")
+
+        // Card Description
+        const description_All_Time = allDescription_All_Time[index]
+        const p_description_All_Time = Card_All_Time.querySelector("p[data-des-All-Time]")
+      
+
+        // Card Genres
+        const genres_All_Time = allGen_All_Time[index]
+        const p_genres_All_Time = Card_All_Time.querySelector("span[data-gen-All-Time]")
+
+        // Card Avg Score
+        const Avg_All_Time = allAvg_All_Time[index]
+        const span_Avg_All_Time = Card_All_Time.querySelector("span[data-avg-All-Time]")
+
+
+        setTimeout(() => {
+          divElement.classList.add('fadeIn');
+          imgElement_All_Time.src = imageUrl_All_Time;
+          h1Element_All_Time.textContent = Name_All_Time;
+          p_Card_H1_All_Time.innerHTML = Card_Name_All_Time;
+          span_Season_All_Time.textContent = Winter_All_Time;
+          span_Year_All_Time.textContent = Year_All_Time;
+          span_Status_All_Time.textContent = Status_All_Time
+          p_description_All_Time.textContent = description_All_Time
+          p_genres_All_Time.textContent = genres_All_Time
+          span_Avg_All_Time.innerHTML = Avg_All_Time
+
+        }, 1000);
+      }
+
+      // This Data Content by Data gettting for Function above
+      divElements.forEach((divElement, index) => {
+        UpdateTheElement_All_Time(divElement, index)
+      });
+
+
+
+
+
     })
 
 }
@@ -151,6 +231,31 @@ function isAtBottom() {
 
 
 
+
+function Adding_Holder_ALL_Time() {
+  for (let i = 0; i < 10; i++) {
+    let container = ` 
+    <div id="test" class="Holder card" data-aos="zoom-in">
+  <div class="card__content All_Time">
+    <p class="card__title" data-Card-Headline-All-Time="YourMainName"></p>
+    <p class="card__description" data-des-All-Time="YourDescriptionn" ></p>
+    <p class="card__Status extra1 ALL"><b>Status:</b> <span data-status-All-Time="HereStatus"></span> , <span
+        data-Season-All-Time="HereSeason"></span> <span data-Year-All-Time="Year"></span></p>
+    <p class="card__Gen extra2 ALL"> <b>Genre:</b> <span data-gen-All-Time=" Yourgen "> </span> </p>
+    <p class="card__Popularity extra3 ALL"><b>Popularity:</b> <span data-avg-All-Time="Youravg"></span>% &#128516 </p>
+  </div>
+  <div id="test1" class="IMGholder IMG_All_Time Skeleton">
+    <img class="AllImg" src="" data-pic-All-Time>
+  </div>
+  <div id="Anime-Name-Wapper" class="Skeleton Anime-Name-Wapper-All-Time">
+    <h2 class="Anime-Headline" data-name-All-Time="YourDataNameHere"> </h2>
+  </div>
+</div>`
+
+    // Added the Api Data to HTML
+    document.getElementById("Row-8").innerHTML += container;
+  }
+}
 
 
 Time(variables);

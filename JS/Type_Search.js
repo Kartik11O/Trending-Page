@@ -92,15 +92,25 @@ function show1({ target }) {
   })
 
 
-  
-  
-  
-  
+  // $(".Skeleton-Search").css({
+  //   opacity : '9'
+  // })
+
+  Adding_Holder_2()
+
   console.log(target.value)
   SS.then((reqq) => reqq.json())
+
     .then((gett) => {
       let details = gett.data.Page.media
       console.log(details)
+      setTimeout(() => {
+        $(".Show_Containers-Skeleton-remover").css({
+          display: 'none'
+        })
+      
+      }, 1000);
+     
       details.map((items4) => {
         let imagee = items4.coverImage.extraLarge
         let nameE = items4.title.english
@@ -116,15 +126,14 @@ function show1({ target }) {
         let emonth = items4.endDate.month
         let eyear = items4.endDate.year
         let gen = items4.genres
-       
+  
         $('.Show_About').each(function () {
           $(this).html($(this).html().split('<br>')[0]);
         });
-      
-
+     
         let container = `
         <div class="Show_Container" >
-        <div id="Show_Img" style=" background-image: url(${imagee});"></div>
+        <div id="Show_Img" class="" style=" background-image: url(${imagee});"></div>
         <div id="Show_details">
           <h2 class="Show_Names">${nameE || namee}</h2>
           <p class="Show_About">${des}</p>
@@ -141,50 +150,69 @@ function show1({ target }) {
         </div>
       </div>
     `
-  
-    
-        document.getElementById("Content-Wapperr").innerHTML += container
+
+        setTimeout(() => {
+          
+          document.getElementById("Content-Wapperr").innerHTML += container
+        }, 1000);
+
       })
-      let col = ['#F277AF' , '#2ECFDB' , '#FEE561' ]
+
+
+      let col = ['#F277AF', '#2ECFDB', '#FEE561']
       let math = Math.floor(Math.random() * 3)
       console.log(math)
-      if(math == 1){
+      if (math == 1) {
         $(".Gen").css({
           "background-color": "#F277AF"
         })
       }
-      else if(math == 2){
+      else if (math == 2) {
         $(".Gen").css({
           "background-color": "#2ECFDB"
         })
       }
-      else if(math == 0){
+      else if (math == 0) {
         $(".Gen").css({
           "background-color": "#FEE561"
         })
       }
 
-    // let gen = document.querySelectorAll('.Gen');
-
-    // gen.forEach(color => {
-    //   math = color
-    //   `background-color: ${color}`
-    // });
 
 
-})
+    })
 
 }
 
 
 let userInput = document.getElementById("Search_bar")
-let target = userInput.value
-let searchBtn = document.getElementById("myBtn").addEventListener('click', show1)
+let userInput2 = document.getElementById("SearchJS")
+// let target = userInput.value
+
 
 
 userInput.addEventListener('keypress', event => {
   if (event.key === 'Enter') {
     const target = userInput.value;
+    $("#SEC-6").fadeIn()
+    $("#SEC-1").css({
+      display: 'none'
+    })
+
+    $("#SEC-2").css({
+      display: 'none'
+    })
+
+    $("#SEC-3").css({
+      display: 'none'
+    })
+    $("#SEC-4").css({
+      display: 'none'
+    })
+    $("#SEC-5").css({
+      display: 'none'
+    })
+
 
     $(".Show_Container").remove() // This will Remove the element inside
 
@@ -193,6 +221,70 @@ userInput.addEventListener('keypress', event => {
     }
   }
 });
+
+userInput2.addEventListener('keypress', event => {
+  if (event.key === 'Enter') {
+    const target = userInput2.value;
+
+    $(".Show_Container").remove() // This will Remove the element inside
+
+    if (target) {
+      show1({ target });
+    }
+  }
+
+
+});
+function Adding_Holder_2() {
+  for (let i = 0; i < 10; i++) {
+    let container = ` 
+    <div class="Show_Containers-Skeleton-remover"  >
+    <div id="Show_Img" class="Skeleton-Search" style=" background-image: url({imagee});"></div>
+    <div id="Show_details">
+      <h2 class="Show_Names Skeleton-Search" style="color: transparent; border:'none;'">{nameE || namee}</h2>
+      <p class="Show_About Skeleton-Search" style="color: transparent;">{des}</p>
+      <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Average Score:</b> </p>
+      <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Status:</b> </p>
+      <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Episodes:</b> </p>
+      <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Start Date:</b> </p>
+      <p class="Show_info Skeleton-Search" style="color: transparent;"><b>End Date:</b> </p>
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span> 
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span> 
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span>
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span>
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span>
+    </div>
+  </div>
+ `;
+
+    // Added the Api Data to HTML
+    document.getElementById("Content-Wapperr").innerHTML += container;
+  }
+}
+
+
+
+$("#value").on('click', () => {
+  $("#SEC-6").fadeOut()
+
+  $("#SEC-1").css({
+    display: 'flex'
+  })
+
+  $("#SEC-2").css({
+    display: 'flex'
+  })
+
+  $("#SEC-3").css({
+    display: 'flex'
+  })
+  $("#SEC-5").css({
+    display: 'flex'
+  })
+
+
+})
+
 
 
 

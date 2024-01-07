@@ -1,125 +1,13 @@
 #SEC-6 {
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: max-content;
-  display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #F9F6EE;
   display: none;
-
-}
-
-#Search_Bar::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-image: url(IG-2.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* opacity: 0.8; */
-  /* filter: drop-shadow(5px 5px 6px black);
-  filter: hue-rotate(339deg);
-  box-shadow: 5px 5px 6px black; */
-}
-
-/* #SEC-6::after{
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.6;
-}
-
-#SEC-6::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  opacity: 0.6;
-  background-image: url(ghoul.jpg);
-  background-size: contain;
-  background-position: center;
-  filter: blur(7px);
-} */
-
-#TEST {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-
-#Search_Bar {
-  width: 100%;
-  height: 45vh;
-  background-color: #000000a1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 3rem;
-  border-bottom: 3px solid black;
-}
-
-
-
-.input-container {
-  width: 220px;
-  position: relative;
-}
-
-.icon_SpaceBar {
-  position: absolute;
-  right: 10px;
-  top: calc(50% + 5px);
-  transform: translateY(calc(-50% - 5px));
-}
-
-.input {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  transition: .2s linear;
-  border: 2.5px solid black;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.input:focus {
-  outline: none;
-  border: 0.5px solid black;
-  box-shadow: -5px -5px 0px #000000;
-}
-
-.input-container:hover>.icon {
-  animation: anim 1s linear infinite;
-}
-
-@keyframes anim {
-
-  0%,
-  100% {
-    transform: translateY(calc(-50% - 5px)) scale(1);
-  }
-
-  50% {
-    transform: translateY(calc(-50% - 5px)) scale(1.1);
-  }
-}
-
-#Input-Wapper {
-  position: relative;
-  width: 36vw;
-  height: 13vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 4rem;
-
+  z-index: 999;
 }
 
 #Content-Wapperr {
@@ -139,11 +27,91 @@
   margin-bottom: 4rem;
 }
 
+#Nav_Bar_Search{
+  position: relative;
+  width: 100%;
+  height: 57vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+#Nav_Bar_Search::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(IG-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -2;
+  filter: contrast(0.9);
+}
+#Nav_Bar_Search::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+ /* background-color: #000; */
+ opacity: 0.6;
+ z-index: -1;
+}
 
 
 
+#btn{
+  position: absolute;
+  top: 17px;
+  left: 26px;
+  background: black;
+  color: #fff;
+  width: 6vw;
+  height: 4.5vh;
+  text-align: center;
+  line-height: 33px;
+  font-family: var(--Headline);
+  font-size: 1.1rem;
+  border-radius: 0rem 0rem 1rem 0rem;
+  transition: 0.5s;
+}
+#btn:hover{
+  border-radius: 0rem 0rem 0rem 0rem; 
+}
+.added{
+  margin-top: 1rem;
+  border: 2px solid black !important;
+}
 
+.input-container {
+  position: relative;
+  width: 28vw;
+  height: 9vh;
+  margin-top: 20rem;
+}
 
+.icon {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 1px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+  width: 100%;
+  height: 27px;
+  padding: 10px;
+  transition: .2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
 
 
 .form {

@@ -4,15 +4,38 @@
     display: flex;
     box-shadow: 85px 9px 6px -1px rgba(0,0,0,0.1), 0px 3px 11px -1px rgba(0,0,0,0.06);
     border-radius: 25px;
-    /* animation: Loading 0.6s both ; */
+    animation: Loading 0.6s both ;
+}
+.Show_Containers-Skeleton-remover{
+    width: 98%;
+    height: clamp(410px,55vh,410px);
+    display: flex;
+    box-shadow: 85px 9px 6px -1px rgba(0,0,0,0.1), 0px 3px 11px -1px rgba(0,0,0,0.06);
+    border-radius: 25px;
 }
 @keyframes Loading {
     0%{
         opacity: 0;
-        transform: translateY(80px);
+      
     }
 }
-
+.Skeleton-Search{
+color: transparent;
+}
+.Skeleton-Search::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: left -40px top 0;
+    z-index: -1;
+    animation: shine 1s ease infinite;
+    background-color: #d9dadb;
+  }
 #Show_Img{
     position: relative;
     width: clamp(291px,19vw,291px);
@@ -32,6 +55,7 @@
 }   
 
 .Show_Names{
+    position: relative;
     font-family: var(--Headline);
     margin-left: 1rem;
     font-size: 1.5rem;
@@ -40,6 +64,7 @@
 }
 
 .Show_About{
+    position: relative;
     width: clamp(300px,73vw,1121px);
     margin-left: 1rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -48,6 +73,7 @@
 }
 
 .Show_info{
+    position: relative;
     margin: 0;
     margin-left: 1rem;
     font-family: var(--Headline);
@@ -55,6 +81,7 @@
 }
 
 .Show_gen{
+    position: relative;
     font-family: var(--Headline);
 }
 
@@ -86,6 +113,7 @@
   }
 
   .Gen{
+    position: relative;
     font-family: var(--Headline);
     /* background: #2ECFDB; */
     /* background-color: rgb(150, 25, 25); */

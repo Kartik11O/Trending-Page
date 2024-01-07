@@ -12,19 +12,27 @@
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 12px;
+  display: block !important;
 }
-.AllImg{
+
+.AllImg {
   width: 100%;
   height: 100%;
   transition: 0.5s;
- border-radius: 12px;
+  border-radius: 12px;
 }
-img[src=""], img:not([src]) {
+
+img[src=""],
+img:not([src]) {
   display: none;
 }
-#Anime-Name-Wapper{
-     width: 100%;
-     height: 3vh;
+
+#Anime-Name-Wapper {
+  width: 100%;
+  min-height: 3vh;
+  height: max-content;
+  display: block !important;
+  ;
 }
 
 .Anime-Headline {
@@ -35,6 +43,7 @@ img[src=""], img:not([src]) {
   color: #414244;
   text-align: center;
   background-color: #F9F6EE;
+
 }
 
 .Anime-GEN {
@@ -131,20 +140,6 @@ img[src=""], img:not([src]) {
 }
 
 
-.img-container img {
-  /* transition: opacity 0.5s ease-in-out; Apply the same transition for the image */
-
-}
-
-.fadeIn{
- /* animation: aa 0.5s both; */
-}
-@keyframes aa {
-  0%{
-    opacity: 0;
-  }
-  
-}
 
 /* 
 const divElements = document.querySelectorAll(".IMG_2");

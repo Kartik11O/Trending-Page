@@ -43,7 +43,7 @@
       <div class="one"></div>
     </div> -->
     <div id="btn-Wapper" class="Click-close">
-      <!-- <div id="Click"></div> -->
+
       <div class="switch ">
         <input type="checkbox">
         <div>
@@ -84,8 +84,9 @@
         <div id="Headline-1__Wapper">
           <h1> Search </h1>
           <div id="S_Box">
-            <input type="text" id="Search_bar" type="search" class="inputSearchField" placeholder="Search Anime!!">
-            <!-- <input id="Search_bar" type="text" name="text" class="input" placeholder="search..."> -->
+            <input type="text" id="Search_bar" type="search" class="inputSearchField SearchJS"
+              placeholder="Search Anime!!">
+
           </div>
 
         </div>
@@ -261,16 +262,25 @@
     <footer id="footer">
       <h4 id="h4"> Created by - Raghav Shrivastava</h4>
     </footer>
-
-
+ 
   </main>
   <section id="SEC-6">
-    <!-- <img id="TEST" src="CSS/SEC-6/ghoul.jpg" alt=""> -->
 
-    <nav id="Search_Bar">
-      <div id="Input-Wapper">
-        <input id="Search_bar" type="text" name="text" class="input" placeholder="search...">
-        <span class="icon_SpaceBar">
+    <nav id="Nav_Bar_Search">
+      <button class="View-Back SearchJS" id="=s">
+        <div class="radio-wrapper">
+          <input class="input" name="btn" id="value" type="radio">
+          <div class="btn">
+            <span aria-hidden="">_</span>Back
+            <span class="btn__glitch" aria-hidden="">_Back🦾</span>
+            <label class="number">r1</label>
+          </div>
+        </div>
+
+      </button>
+      <div class="input-container">
+        <input type="text" name="text" class="input" id="SearchJS" placeholder="search...">
+        <span class="icon">
           <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -314,25 +324,6 @@
 
 
 
-    <div id="test" class="Holder card" data-aos="zoom-in">
-      <div class="card__content">
-        <p class="card__title">{Name_AnimeE || Name_Anime}</p>
-        <p class="card__description">{des}</p>
-        <p class="card__Status extra1 ALL"><b>Status:</b> {status} , {season} {Year}</p>
-        <p class="card__Gen extra2 ALL"><b>Genre:</b> {gen[1] || gen[0] || gen[2] || gen[3]}, {gen[0]}, {gen[2]} </p>
-        <p class="card__Popularity extra3 ALL"><b>Popularity:</b> {avg} &#128516 </p>
-      </div>
-      <div id="test1" class="IMGholder IMG_2 Skeleton" >
-        <img class="AllImg" src=""  data-pic> 
-      </div>
-      <div id="Anime-Name-Wapper" class="Skeleton Anime-Name-Wapper">
-      <h2 class="Anime-Headline" data-name="YourDataNameHere"></h2>
-      </div>
-    </div>
-
-
-
-
 
 
 
@@ -341,22 +332,17 @@
   </section>
   <script src="JS/code.jquery.com_jquery-3.7.0.min.js"></script>
 
-  <script type="module" src="JS/Type_Anime.js"></script>
-  <!-- <script type="module" src="JS/Type_Search.js"></script> -->
+  <script type="module" src="JS/ALL-Father.js"></script>
+  <script type="module" src="JS/Type_Search.js"></script>
   <script src="JS/SearchAnimation.js"></script>
-  <!-- <script type="module" src="JS/Type-Manga.js"></script> -->
   <script type="module" src="JS/View-More.js"></script>
-
-  <!-- <script type="module" src="JS/Type_Popular.js"></script> -->
-  <!-- <script cript type="module" src="JS/Type_All_Time.js"></script> -->
-  <!-- <script type="module" src="JS/View-More-Manga.js"></script> -->
-  <!-- <script type="module" src="JS/View-More-Popular.js"></script> -->
-  <!-- <script type="module" src="JS/View-More-All-Time.js"></script> -->
+  <script type="module" src="JS/View-More-Manga.js"></script>
+  <script type="module" src="JS/View-More-Favourites.js"></script>
+  <script type="module" src="JS/View-More-All-Time.js"></script>
   <script src="JS/Click.js"></script>
   <script type="module" src="componentss/Api.js"></script>
   <script src="JS/Loading.js"></script>
   <script src="Phone/AOS.js"></script>
-  <!-- <script type="module" src="componentss/api2.js"></script> -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -364,5 +350,6 @@
     });
   </script>
 </body>
+
 
 </html>
