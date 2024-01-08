@@ -52,3 +52,22 @@ elements.forEach((element) => {
       
          `
         document.getElementById("Row-3").innerHTML += Pic_Container
+
+
+
+
+
+
+        // function addSkeleton() {
+//   // Add the 'Skeleton' class to the newly created elements
+//   const newSkeletonElements = document.querySelectorAll(`.IMG_2:nth-child(n + ${itemCount + 1}), .Anime-Name-Wapper:nth-child(n + ${itemCount + 1})`);
+//   console.log(newSkeletonElements , "Thissssssss")
+//   newSkeletonElements.forEach((element) => {
+//     element.classList.add("Skeleton");
+//   });
+
+//   // Update the itemCount for the next iteration
+//   itemCount += newSkeletonElements.length;
+// }
+
+  // addSkeleton() // Adding the Skeleton Loading To Element

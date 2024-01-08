@@ -107,9 +107,10 @@ let allSeason = [];
 let allYear = [];
 let allStatus = [];
 let allDescription = [];
-let allGen = [ ];
+let allGen = [];
 let allAvg = [];
 
+let itemCount = 0; // Initialize the count of items (To Remove the Animation)
 
 
 // Start Fetching the Api Data
@@ -135,7 +136,7 @@ function View(variables) {
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
-  
+
       Data.map(items => {
 
         let Poster_Anime = items.coverImage.extraLarge
@@ -161,17 +162,22 @@ function View(variables) {
         allGen.push(gen)
         allAvg.push(avg)
         // console.log(allSeason)
+
       })
+
+
+
+
 
       // FlatMap Area (STARTING)
       const newCoverImages = Data.flatMap(item => item.coverImage.extraLarge);
-      allCoverImages = allCoverImages.concat(newCoverImages); 
+      allCoverImages = allCoverImages.concat(newCoverImages);
       // console.log('Updated Image:', allCoverImages);
 
       const AnimeName = Data.flatMap(item => item.title.english);
-      allNames = allNames.concat(AnimeName); 
+      allNames = allNames.concat(AnimeName);
       // console.log('Updated Name:', allNames);
-  
+
 
 
       // Defining Variable (START)
@@ -187,20 +193,20 @@ function View(variables) {
           }
         }
       }
-      
+
       // Example usage:
       let keywordToMatch = "NOT_YET_RELEASED";
       let replacementString = "Not Released";
-      
+
       replaceStringIfKeywordMatched(allStatus, keywordToMatch, replacementString);
-      
+
       // This Function Update the Element by sending the Data to Foreach
       function UpdateTheElement(divElement, index) {
         const imageUrl = allCoverImages[index];
         const imgElement = divElement.querySelector("img[data-pic]");
 
         let Description_Removed_Tag = allDescription.map(str => str.replace(/<br>|<i>/g, '')); // This will remove any <br> tag or <i> tag.
-      
+
         // Card Name Headline
         const headline = AnimeHeadlines[index]; // THE MAIN NAME variable
         const Card = All_Card_Content[index]; // This Provide Variable to all content related
@@ -212,7 +218,7 @@ function View(variables) {
         // Card Inside Headline Name (On Hover)
         const Card_Name = allNames[index];
         const p_Card_H1 = Card.querySelector("p[data-Card-Headline]");
-       
+
         // Card Season
         const Winter = allSeason[index];
         const span_Season = Card.querySelector(" span[data-Season]");
@@ -236,7 +242,7 @@ function View(variables) {
         // Card Avg Score
         const Avg = allAvg[index]
         const span_Avg = Card.querySelector("span[data-avg]")
-     
+
 
         setTimeout(() => {
           divElement.classList.add('fadeIn');
@@ -249,8 +255,8 @@ function View(variables) {
           p_description.textContent = description
           p_genres.textContent = genres
           span_Avg.innerHTML = Avg
-
         }, 1000);
+
       }
 
       // This Data Content by Data gettting for Function above
@@ -258,7 +264,21 @@ function View(variables) {
         UpdateTheElement(divElement, index)
       });
 
+      removeSkeleton() // To Remove the Skeleton Loading Animation
+
     })
+
+
+  function removeSkeleton() {
+    // Remove the 'Skeleton' class from existing elements
+    const existingSkeletonElements = document.querySelectorAll(".IMG_2, .Anime-Name-Wapper");
+    setTimeout(() => {
+      existingSkeletonElements.forEach((element) => {
+        element.classList.remove("Skeleton");
+      });
+    }, 2000);
+
+  }
 }
 
 

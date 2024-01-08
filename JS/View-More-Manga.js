@@ -61,7 +61,7 @@ function Manga(variables) {
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
-      console.log(Data , "aaaa")
+      console.log(Data, "aaaa")
 
       // Here Maped the Data
       Data.map(items => {
@@ -117,11 +117,11 @@ function Manga(variables) {
         const imgElement_Manga = divElement.querySelector("img[data-pic-Manga]");
 
         // let Description_Removed_Tag_Manga = allDescription_Manga.map(str => str.replace(/<br>|<i>/g, '')); // This will remove any <br> tag or <i> tag.
-    
+
         // Card Name Headline
         const headline_Manga = AnimeHeadlines[index]; // THE MAIN NAME variable
         const Card_Manga = All_Card_Content[index]; // This Provide Variable to all content related
-        
+
         // Card Main Name
         const Name_Manga = allNames_Manga[index];
         const h1Element_Manga = headline_Manga.querySelector("h2[data-name-Manga]");
@@ -129,7 +129,7 @@ function Manga(variables) {
         // Card Inside Headline Name (On Hover)
         const Card_Name_Manga = allNames_Manga[index];
         const p_Card_H1_Manga = Card_Manga.querySelector("p[data-Card-Headline-Manga]");
-     
+
         // Card Season
         const Winter_Manga = allSeason_Manga[index];
         const span_Season_Manga = Card_Manga.querySelector(" span[data-Season-Manga]");
@@ -137,7 +137,7 @@ function Manga(variables) {
         // Card Year
         const Year_Manga = allYear_Manga[index]
         const span_Year_Manga = Card_Manga.querySelector("span[data-Year-Manga]");
- 
+
         // Card Status
         const Status_Manga = allStatus_Manga[index]
         const span_Status_Manga = Card_Manga.querySelector("span[data-status-Manga]")
@@ -145,7 +145,7 @@ function Manga(variables) {
         // Card Description
         const description_Manga = allDescription_Manga[index]
         const p_description_Manga = Card_Manga.querySelector("p[data-des-Manga]")
-      
+
 
         // Card Genres
         const genres_Manga = allGen_Manga[index]
@@ -176,9 +176,20 @@ function Manga(variables) {
         UpdateTheElement_Manga(divElement, index)
       });
 
+      removeSkeleton() // To Remove the Skeleton Loading Animation
+
     })
 
+  function removeSkeleton() {
+    // Remove the 'Skeleton' class from existing elements
+    const existingSkeletonElements = document.querySelectorAll(".IMG_Manga, .Anime-Name-Wapper-Manga");
+    setTimeout(() => {
+      existingSkeletonElements.forEach((element) => {
+        element.classList.remove("Skeleton");
+      });
+    }, 1000);
 
+  }
 }
 
 

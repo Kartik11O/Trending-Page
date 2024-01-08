@@ -1,7 +1,7 @@
-import { queryA , variables  } from "../componentss/Api.js";
+import { queryA, variables } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
-
+// All tiMe popular
 
 // This Show the View More
 $("#Color_B").on('click', () => {
@@ -39,6 +39,8 @@ let allStatus_All_Time = [];
 let allDescription_All_Time = [];
 let allGen_All_Time = [];
 let allAvg_All_Time = [];
+
+
 
 // Start Fetching the Api Data
 function Time(_variables) {
@@ -87,17 +89,17 @@ function Time(_variables) {
         allGen_All_Time.push(gen)
         allAvg_All_Time.push(avg)
 
-        
+
       })
-        // FlatMap Area (STARTING)
-        let newCoverImages_All_Time = Data.flatMap(item => item.coverImage.extraLarge);
-        allCoverImages_All_Time = allCoverImages_All_Time.concat(newCoverImages_All_Time);
-        // console.log('Updated Image:', allCoverImages_Manga);
-  
-        let AnimeName = Data.flatMap(item => item.title.english);
-        allNames_All_Time = allNames_All_Time.concat(AnimeName);
-        // console.log('Updated Name:', allNames);
-  
+      // FlatMap Area (STARTING)
+      let newCoverImages_All_Time = Data.flatMap(item => item.coverImage.extraLarge);
+      allCoverImages_All_Time = allCoverImages_All_Time.concat(newCoverImages_All_Time);
+      // console.log('Updated Image:', allCoverImages_Manga);
+
+      let AnimeName = Data.flatMap(item => item.title.english);
+      allNames_All_Time = allNames_All_Time.concat(AnimeName);
+      // console.log('Updated Name:', allNames);
+
       // Defining Variable (START)
       let divElements = document.querySelectorAll(".IMG_All_Time");
       let AnimeHeadlines = document.querySelectorAll(".Anime-Name-Wapper-All-Time");
@@ -110,11 +112,11 @@ function Time(_variables) {
         const imgElement_All_Time = divElement.querySelector("img[data-pic-All-Time]");
 
         // let Description_Removed_Tag_Manga = allDescription_Manga.map(str => str.replace(/<br>|<i>/g, '')); // This will remove any <br> tag or <i> tag.
-    
+
         // Card Name Headline
         const headline_All_Time = AnimeHeadlines[index]; // THE MAIN NAME variable
         const Card_All_Time = All_Card_Content[index]; // This Provide Variable to all content related
-        
+
         // Card Main Name
         const Name_All_Time = allNames_All_Time[index];
         const h1Element_All_Time = headline_All_Time.querySelector("h2[data-name-All-Time]");
@@ -122,7 +124,7 @@ function Time(_variables) {
         // Card Inside Headline Name (On Hover)
         const Card_Name_All_Time = allNames_All_Time[index];
         const p_Card_H1_All_Time = Card_All_Time.querySelector("p[data-Card-Headline-All-Time]");
-     
+
         // Card Season
         const Winter_All_Time = allSeason_All_Time[index];
         const span_Season_All_Time = Card_All_Time.querySelector(" span[data-Season-All-Time]");
@@ -130,7 +132,7 @@ function Time(_variables) {
         // Card Year
         const Year_All_Time = allYear_All_Time[index]
         const span_Year_All_Time = Card_All_Time.querySelector("span[data-Year-All-Time]");
- 
+
         // Card Status
         const Status_All_Time = allStatus_All_Time[index]
         const span_Status_All_Time = Card_All_Time.querySelector("span[data-status-All-Time]")
@@ -138,7 +140,7 @@ function Time(_variables) {
         // Card Description
         const description_All_Time = allDescription_All_Time[index]
         const p_description_All_Time = Card_All_Time.querySelector("p[data-des-All-Time]")
-      
+
 
         // Card Genres
         const genres_All_Time = allGen_All_Time[index]
@@ -169,11 +171,22 @@ function Time(_variables) {
         UpdateTheElement_All_Time(divElement, index)
       });
 
-
-
-
+      removeSkeleton() // To Remove the Skeleton Loading Animation
 
     })
+
+
+  function removeSkeleton() {
+    // Remove the 'Skeleton' class from existing elements
+    const existingSkeletonElements = document.querySelectorAll(".IMG_All_Time, .Anime-Name-Wapper-All-Time");
+    setTimeout(() => {
+      existingSkeletonElements.forEach((element) => {
+        element.classList.remove("Skeleton");
+      });
+    }, 1000);
+
+  }
+
 
 }
 

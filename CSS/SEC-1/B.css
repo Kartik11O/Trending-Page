@@ -38,8 +38,8 @@ Nav{
     bottom: 0;
     left: 0;
     z-index: 99;
-    width: 21vw;
-    height: 12vh;
+    width: clamp(139px,21vw,322px);
+    height: clamp(54px,12vh,84px);
     display: flex;
     justify-content: center;
     align-items: center;

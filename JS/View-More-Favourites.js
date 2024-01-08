@@ -16,6 +16,7 @@ $("#Color_O").on('click', () => {
   $("#SEC-2").fadeOut()
   $("#SEC-3").fadeOut()
   $("#SEC-5").fadeOut()
+  $("#footer").fadeOut()
 
 })
 // This Close the View More
@@ -25,6 +26,7 @@ $("#View-Back-Popular").on('click', () => {
   $("#SEC-2").fadeIn()
   $("#SEC-3").fadeIn()
   $("#SEC-5").fadeIn()
+  $("#footer").fadeIn()
 })
 
 // Array of Manga Content
@@ -172,8 +174,20 @@ function Popular(_variables) {
       });
 
 
+      removeSkeleton() // To Remove the Skeleton Loading Animation
 
     })
+
+  function removeSkeleton() {
+    // Remove the 'Skeleton' class from existing elements
+    const existingSkeletonElements = document.querySelectorAll(".IMG_All_Fav Skeleton, .Anime-Name-Wapper-All-Fav");
+    setTimeout(() => {
+      existingSkeletonElements.forEach((element) => {
+        element.classList.remove("Skeleton");
+      });
+    }, 1000);
+
+  }
 
 }
 
