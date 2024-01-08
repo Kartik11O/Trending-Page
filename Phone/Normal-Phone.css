@@ -198,3 +198,12 @@ html{
 .input-container {
     width: clamp(293px,28vw,430px);
 }
+#Show_Img_Holder_S {
+    position: relative;
+    height: auto;
+    width: clamp(45px,12vw,45px) !important;
+}
+#Show_Img {
+    width: 100%;
+
+}
