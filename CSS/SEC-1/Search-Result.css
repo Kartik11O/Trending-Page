@@ -1,10 +1,11 @@
 .Show_Container{
+    position: relative;
     width: 98%;
-    height: clamp(410px,55vh,410px);
+    height: 100%;
     display: flex;
     box-shadow: 85px 9px 6px -1px rgba(0,0,0,0.1), 0px 3px 11px -1px rgba(0,0,0,0.06);
     border-radius: 25px;
-    animation: Loading 0.6s both ;
+    animation: Loading 0.6s both;
 }
 .Show_Containers-Skeleton-remover{
     width: 98%;
@@ -48,7 +49,7 @@ color: transparent;
 }
 
 #Show_details{
-    width: clamp(300px,75vw,1152px);
+    width: clamp(300px,75vw,1152px); 
     height: 100%;
     border-radius: 0px 25px 25px 0px;
 
@@ -123,11 +124,15 @@ color: transparent;
     display: inline-block;
     text-align: center;
     margin-left: 1rem;
+    margin-bottom: 13px;
     line-height: 28px;
     /* color: #fff; */
     border: 1px solid black;
     box-shadow: 4px 4px #000000;
     margin-top: 2px;
     padding: 1px 19px;
+  }
+  #Show_Img_Holder_S{
+    height: auto;
   }
   

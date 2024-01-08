@@ -176,6 +176,9 @@
     .tooltip{
         display: none;
     }
-    
+    .input-container {
+        width: clamp(393px,28vw,430px);
+
+    }
     
 }

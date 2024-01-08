@@ -133,7 +133,9 @@ function show1({ target }) {
      
         let container = `
         <div class="Show_Container" >
+        <div id="Show_Img_Holder_S">
         <div id="Show_Img" class="" style=" background-image: url(${imagee});"></div>
+      </div>
         <div id="Show_details">
           <h2 class="Show_Names">${nameE || namee}</h2>
           <p class="Show_About">${des}</p>
@@ -241,18 +243,18 @@ function Adding_Holder_2() {
     <div class="Show_Containers-Skeleton-remover"  >
     <div id="Show_Img" class="Skeleton-Search" style=" background-image: url({imagee});"></div>
     <div id="Show_details">
-      <h2 class="Show_Names Skeleton-Search" style="color: transparent; border:'none;'">{nameE || namee}</h2>
+      <h2 class="Show_Names Skeleton-Search" style="color: transparent; border:none !important;">{nameE || namee}</h2>
       <p class="Show_About Skeleton-Search" style="color: transparent;">{des}</p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Average Score:</b> </p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Status:</b> </p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Episodes:</b> </p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Start Date:</b> </p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>End Date:</b> </p>
-      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span> 
-      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span> 
-      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span>
-      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span>
-      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color:'none;' color: transparent;" id="test"></span>
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color: none; color: transparent;" id="test"></span> 
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color: none; color: transparent;" id="test"></span> 
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color: none; color: transparent;" id="test"></span>
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color: none; color: transparent;" id="test"></span>
+      <span class="Gen Skeleton-Search" style="border: none; box-shadow: none; background-color: none; color: transparent;" id="test"></span>
     </div>
   </div>
  `;

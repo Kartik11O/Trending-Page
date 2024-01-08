@@ -194,3 +194,7 @@ html{
 .tooltip{
     display: none;
 }
+
+.input-container {
+    width: clamp(293px,28vw,430px);
+}
