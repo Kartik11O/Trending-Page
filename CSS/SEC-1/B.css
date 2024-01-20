@@ -1,4 +1,4 @@
-#Navbar{
+#Navbar {
     position: relative;
     width: 100%;
     height: 40vh;
@@ -6,7 +6,7 @@
     justify-content: space-between;
 }
 
-#Navbar::before{
+#Navbar::before {
     position: absolute;
     content: "";
     opacity: 0.6;
@@ -15,37 +15,27 @@
     height: 100%;
     z-index: 99;
 }
-/* #Navbar::after{
-    position: absolute;
-    content: "";
-    background-image: url(wallpaperflare.com_wallpaper.jpg);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-} */
-Nav{
+
+Nav {
     position: relative;
     width: 100%;
     height: 7vh;
     z-index: 99;
 }
 
-#Headline{
+#Headline {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 99;
-    width: clamp(139px,21vw,322px);
-    height: clamp(54px,12vh,84px);
+    width: clamp(139px, 21vw, 322px);
+    height: clamp(54px, 12vh, 84px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#Headline11{
+#Headline11 {
     color: #fff;
     font-family: 'Staatliches', sans-serif;
     font-size: 4rem;
@@ -61,17 +51,18 @@ Nav{
     z-index: 99;
 }
 
-#UL__I{
+#UL__I {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
 }
-.LI__I{
-list-style: none;
+
+.LI__I {
+    list-style: none;
 }
 
-.LI__I a{
+.LI__I a {
     position: relative;
     width: 50px;
     height: 50px;
@@ -85,45 +76,38 @@ list-style: none;
     z-index: 5;
     transition: 0.3s;
 }
-.LI__I a:hover{
-transform: translateY(-10px);
-color: #fff;
+
+.LI__I a:hover {
+    transform: translateY(-10px);
+    color: #fff;
 }
 
-.LI__I:nth-child(1) a:hover{
-    background-color:  #c9510c;
+.LI__I:nth-child(1) a:hover {
+    background-color: #c9510c;
 }
-.LI__I:nth-child(2) a:hover{
+
+.LI__I:nth-child(2) a:hover {
     background-color: #0a66c2;
 }
-.LI__I:nth-child(3) a:hover{
-    
-    background: linear-gradient(
-        45deg,
-        #f09433 0%,
-        #e6683c 25%,
-        #dc2743 50%,
-        #cc2366 75%,
-        #4862c9 100% 
-        );
-    }
-    .LI__I:nth-child(4) a:hover{
-        background-color: #476788; 
-    }
 
-#Search__Bar__Container{
+.LI__I:nth-child(3) a:hover {
+
+    background: linear-gradient(45deg,
+            #f09433 0%,
+            #e6683c 25%,
+            #dc2743 50%,
+            #cc2366 75%,
+            #4862c9 100%);
+}
+
+.LI__I:nth-child(4) a:hover {
+    background-color: #476788;
+}
+
+#Search__Bar__Container {
     width: 100%;
-    height: 80vh;
+    height: clamp(562px, 80vh, 562px);
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(
-        45deg,
-        #f09433 0%,
-        #e6683c 25%,    
-        #dc2743 50%,
-        #cc2366 75%,
-        #4862c9 100% 
-        ); */
 }
-

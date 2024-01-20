@@ -4,7 +4,7 @@
     }
     
     /* It Sets the Sociall Icons (Start) */
-    #Icons {
+    #Icons { 
         top: 0;
         width: clamp(65px,16vw,322px);
         height: clamp(213px,32vh,213px);

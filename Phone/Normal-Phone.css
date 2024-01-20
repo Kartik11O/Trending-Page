@@ -207,3 +207,17 @@ html{
     width: 100%;
 
 }
+
+#Headline {
+    width: clamp(157px,42vw,157px);
+}
+
+#Search_bar {
+    width: clamp(307px,64vw,307px);
+    height: clamp(35px,3.8vh,35px);
+    border-radius: 6px;
+}
+
+#Headline-1__Wapper h1 {
+    font-size: 6rem;
+}

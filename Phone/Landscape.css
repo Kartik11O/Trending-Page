@@ -173,4 +173,7 @@
         display: none;
     }
     
+    #Headline {
+        width: clamp(157px,42vw,157px);
+    }
 }

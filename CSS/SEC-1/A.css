@@ -129,9 +129,8 @@ body {
 }
 
 #Headline-1__Wapper{
-    width: 40vw;
-    height: 40vh;
-    /* background-color: rgba(0, 0, 0, 0.651); */
+    width: clamp(614px,40vw,614px);
+    height: clamp(281px,40vh,281px);
     display: flex;
     justify-content: center;
     align-items: center;
