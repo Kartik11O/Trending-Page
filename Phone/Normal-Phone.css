@@ -209,7 +209,8 @@ html{
 }
 
 #Headline {
-    width: clamp(157px,42vw,157px);
+    /* width: clamp(157px,42vw,157px); */
+    padding: 0px 12px;
 }
 
 #Search_bar {
