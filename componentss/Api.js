@@ -1,4 +1,4 @@
-export { query, variables , queryM , variables_Manga , queryA , queryF};
+export { query, variables , queryM , queryA , queryF , querySea , variablesSea};
 
 var query = `
 query ($page: Int, $perPage: Int, $pageFavorites: Int, $perPageFavorites: Int, $pagePopularity: Int, $perPagePopularity: Int, $searchAnime: String, $searchManga: String) {
@@ -119,12 +119,6 @@ var variables = {
 
 }
 
-// This one Fetch Manga View Content 
-var variables_Manga = {
-  id: 15125,
-  page: 1,
-  perPage: 10
-}
 // ViewMore_Manga
 var queryM = `
 query ($page: Int, $perPage: Int, $search: String) {
@@ -263,7 +257,7 @@ query ($page: Int, $perPage: Int, $search: String) {
     
     }
 `
-//   ViewMore_All tiMe fAVourites
+//   ViewMore_All Time Favourites
 var queryF = `
 query ($page: Int, $perPage: Int, $search: String) {
     Page(page: $page, perPage: $perPage) {
@@ -331,3 +325,77 @@ query ($page: Int, $perPage: Int, $search: String) {
     }
   }
 `
+// Search-One
+let querySea = `
+query ($page: Int, $perPage: Int, $search: String) {
+    Page(page: $page, perPage: $perPage) {
+      pageInfo {
+        total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
+
+      }
+      media(search: $search, type: ANIME , sort: TRENDING_DESC) {
+        id
+        
+        title {
+          romaji
+          english
+          native
+        }
+        bannerImage
+        coverImage  {
+            extraLarge
+        }
+       characters {
+          edges {
+            id
+            node {
+              image {
+                large
+              }
+            }
+          }
+        }
+          
+        studios(isMain: true) {
+          nodes {
+            name
+          }
+        }
+         
+        startDate {
+            year
+            month
+            day
+        }
+        endDate{
+            year
+            month
+            day 
+        }
+        format
+        trending
+        isAdult
+        type
+        genres
+        episodes
+        duration
+        status
+        popularity
+        averageScore
+        season
+        siteUrl
+        description
+      }
+    }
+  }
+`
+let variablesSea = {
+  // search: target -- I directly added to code in file with variables (Type-Search)
+  id: 15125,
+  page: 1,
+  perPage: 50
+}

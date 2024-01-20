@@ -19,16 +19,16 @@ Anime.then((DataReq) => DataReq.json())
   .then((VV) => {
     console.log(VV)
     let Anime = VV.data.anime.media
-    console.log(Anime, 'ANIME')
+    // console.log(Anime, 'ANIME')
 
     let manga = VV.data.manga.media
-    console.log(manga, 'MANGA')
+    // console.log(manga, 'MANGA')
 
     let favourites = VV.data.favourites.media
-    console.log(favourites, 'favourites')
+    // console.log(favourites, 'favourites')
 
     let popularity = VV.data.popularity.media
-    console.log(popularity, 'popularity')
+    // console.log(popularity, 'popularity')
 
     // Here Maped the Data
 
@@ -87,7 +87,7 @@ Anime.then((DataReq) => DataReq.json())
       let avg = items_M.averageScore
       let gen = items_M.genres
       let des = items_M.description
-  
+
       // This remove the <Br> in card description
       $('.card__description').each(function () {
         $(this).html($(this).html().split('<br>')[0]);

@@ -1,78 +1,6 @@
-function show1({ target }) {
-  let query = `
-  query ($page: Int, $perPage: Int, $search: String) {
-      Page(page: $page, perPage: $perPage) {
-        pageInfo {
-          total
-        currentPage
-        lastPage
-        hasNextPage
-        perPage
-  
-        }
-        media(search: $search, type: ANIME , sort: TRENDING_DESC) {
-          id
-          
-          title {
-            romaji
-            english
-            native
-          }
-          bannerImage
-          coverImage  {
-              extraLarge
-          }
-         characters {
-            edges {
-              id
-              node {
-                image {
-                  large
-                }
-              }
-            }
-          }
-            
-          studios(isMain: true) {
-            nodes {
-              name
-            }
-          }
-           
-          startDate {
-              year
-              month
-              day
-          }
-          endDate{
-              year
-              month
-              day 
-          }
-          format
-          trending
-          isAdult
-          type
-          genres
-          episodes
-          duration
-          status
-          popularity
-          averageScore
-          season
-          siteUrl
-          description
-        }
-      }
-    }
-  `
-  let variables = {
-    search: target,
-    id: 15125,
-    page: 1,
-    perPage: 50
-  }
+import { querySea , variablesSea } from "../componentss/Api.js";
 
+function show1({ target }) {
 
   // /search/anime?search=naruto
   const SS = fetch(`https://graphql.anilist.co/search/anime?q=${target.value}`, {
@@ -82,8 +10,8 @@ function show1({ target }) {
       'Accept': 'application/json',
     },
     body: JSON.stringify({
-      query: query,
-      variables: variables,
+      query: querySea,
+      variables: variablesSea, search: target,
       Media: {
         Type: 'Anime'
       }
@@ -91,14 +19,8 @@ function show1({ target }) {
 
   })
 
+  Adding_Holder_2() // Adding Sekelton Loading
 
-  // $(".Skeleton-Search").css({
-  //   opacity : '9'
-  // })
-
-  Adding_Holder_2()
-
-  console.log(target.value)
   SS.then((reqq) => reqq.json())
 
     .then((gett) => {
@@ -189,7 +111,7 @@ function show1({ target }) {
 
 let userInput = document.getElementById("Search_bar")
 let userInput2 = document.getElementById("SearchJS")
-// let target = userInput.value
+
 
 
 

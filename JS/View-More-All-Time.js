@@ -1,7 +1,7 @@
 import { queryA, variables } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
-// All tiMe popular
+// All Time popular
 
 // This Show the View More
 $("#Color_B").on('click', () => {
@@ -67,9 +67,6 @@ function Time(_variables) {
 
       // Here Maped the Data
       Data.map((items) => {
-        let Poster_Anime = items.coverImage.extraLarge
-        let Name_AnimeE = items.title.english
-        let Name_Anime = items.title.romaji
         let Year = items.startDate.year
         let status = items.status
         let season = items.season
@@ -186,8 +183,6 @@ function Time(_variables) {
     }, 1000);
 
   }
-
-
 }
 
 
