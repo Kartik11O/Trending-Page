@@ -243,7 +243,7 @@ function Adding_Holder_2() {
     <div class="Show_Containers-Skeleton-remover"  >
     <div id="Show_Img" class="Skeleton-Search" style=" background-image: url({imagee});"></div>
     <div id="Show_details">
-      <h2 class="Show_Names Skeleton-Search" style="color: transparent; border:none !important;">{nameE || namee}</h2>
+      <h2 class="Show_Names Skeleton-Search" style="color: transparent ; border:none !important;">{nameE || namee}</h2>
       <p class="Show_About Skeleton-Search" style="color: transparent;">{des}</p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Average Score:</b> </p>
       <p class="Show_info Skeleton-Search" style="color: transparent;"><b>Status:</b> </p>

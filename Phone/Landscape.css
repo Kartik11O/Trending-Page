@@ -121,7 +121,7 @@
     }
     
     .Holder {
-        width: clamp(186px,28vw,186px);
+        width: clamp(200.15px,30vw,200.15px);
     }
     .IMGholder {
         width: inherit;
