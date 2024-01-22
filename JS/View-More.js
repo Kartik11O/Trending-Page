@@ -268,6 +268,11 @@ function View(variables) {
 
     })
 
+    .catch((error) => {
+      console.error('Error:', error);
+      alert("API is overloaded, Please Wait ")
+    });
+  
 
   function removeSkeleton() {
     // Remove the 'Skeleton' class from existing elements
@@ -281,22 +286,30 @@ function View(variables) {
   }
 }
 
-
+//  Check if the scroll event listener is added or not
+let isScrollListenerAdded_ViewMore = true;
 // Get a reference to the target element you want to observe
 const targetElement = document.getElementById('SEC-4');
 
-// Define the callback function to be executed when the element is visible
+// This checks if elements is visible or not.
 function handleVisibility(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // The target element is fully or partially visible
-      // Execute your function here
-      isAtBottom();
-      window.addEventListener('scroll', isAtBottom);
-      // Stop observing if needed
-      observer.unobserve(targetElement);
+
+      // Adding the scroll event listener 
+      if (!isScrollListenerAdded_ViewMore) {
+        window.addEventListener('scroll', isAtBottom);
+        isScrollListenerAdded_ViewMore = true;
+      }
+
     }
-  });
+    else {
+      // if target element is not visible & Remove the scroll event listener
+      window.removeEventListener('scroll', isAtBottom);
+      isScrollListenerAdded_ViewMore = false;
+    }
+
+  })
 }
 
 // Create an Intersection Observer
@@ -317,20 +330,17 @@ function isAtBottom() {
   const documentHeight = document.documentElement.scrollHeight; // Total height of the document
   const scrollPosition = window.scrollY; // Current vertical scroll position
 
-  // Define a threshold (e.g., 10 pixels) to trigger the action
+  // It will run, when there is 2px gap between bottom
   const threshold = 2;
 
   // Check if the user has reached the bottom
   if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
     // The user has reached the bottom of the window, do something here
-
     variables.page++;
     View(variables);
-    console.log("calling")
-
   }
-}
 
+}
 
 
 function Adding_Holder() {
@@ -360,5 +370,4 @@ function Adding_Holder() {
 
 
 
-View(variables);
 

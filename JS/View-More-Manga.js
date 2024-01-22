@@ -61,13 +61,9 @@ function Manga(variables) {
   api.then((req) => req.json())
     .then((res) => {
       let Data = res.data.Page.media
-      console.log(Data, "aaaa")
 
       // Here Maped the Data
       Data.map(items => {
-        let Poster_Anime = items.coverImage.extraLarge
-        let Name_AnimeE = items.title.english
-        let Name_Anime = items.title.romaji
         let Year = items.startDate.year
         let status = items.status
         let season = items.season
@@ -180,6 +176,11 @@ function Manga(variables) {
 
     })
 
+    .catch((error) => {
+      console.error('Error:', error);
+      alert("API is overloaded, Please Wait ")
+    });
+  
   function removeSkeleton() {
     // Remove the 'Skeleton' class from existing elements
     const existingSkeletonElements = document.querySelectorAll(".IMG_Manga, .Anime-Name-Wapper-Manga");
@@ -190,23 +191,34 @@ function Manga(variables) {
     }, 1000);
 
   }
+
 }
 
+//  Check if the scroll event listener is added or not
+let isScrollListenerAdded_Manga = true;
 
 // Get a reference to the target element you want to observe
 const targetElement = document.getElementById('SEC-3-View');
 
+// This checks if elements is visible or not.
 function handleVisibility(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // The target element is fully or partially visible
-      // Execute your function here
-      isAtBottom();
-      window.addEventListener('scroll', isAtBottom);
-      // Stop observing if needed
-      observer.unobserve(targetElement);
+
+      // Adding the scroll event listener 
+      if (!isScrollListenerAdded_Manga) {
+        window.addEventListener('scroll', isAtBottom);
+        isScrollListenerAdded_Manga = true;
+      }
+
     }
-  });
+    else {
+      // if target element is not visible & Remove the scroll event listener
+      window.removeEventListener('scroll', isAtBottom);
+      isScrollListenerAdded_Manga = false;
+    }
+
+  })
 }
 
 // Create an Intersection Observer
@@ -227,23 +239,16 @@ function isAtBottom() {
   const documentHeight = document.documentElement.scrollHeight; // Total height of the document
   const scrollPosition = window.scrollY; // Current vertical scroll position
 
-  // Define a threshold (e.g., 10 pixels) to trigger the action
+  // It will run, when there is 2px gap between bottom
   const threshold = 2;
 
   // Check if the user has reached the bottom
   if (documentHeight - (scrollPosition + windowHeight) <= threshold) {
     // The user has reached the bottom of the window, do something here
-
     variables.page++;
     Manga(variables);
-    console.log("calling")
-
   }
 }
-
-
-
-
 
 function Adding_Holder_Manga() {
   for (let i = 0; i < 10; i++) {
@@ -271,8 +276,3 @@ function Adding_Holder_Manga() {
 }
 
 
-
-
-
-
-Manga(variables);

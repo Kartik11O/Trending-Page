@@ -1,7 +1,7 @@
 import { queryF, variables } from "../componentss/Api.js";
 //  Fetching form Components (TYPE ANIME)
 
-
+// All Time Favourites
 
 // This Show the View More
 $("#Color_O").on('click', () => {
@@ -65,9 +65,6 @@ function Popular(_variables) {
 
       // Here Maped the Data
       Data.map((items) => {
-        let Poster_Anime = items.coverImage.extraLarge
-        let Name_AnimeE = items.title.english
-        let Name_Anime = items.title.romaji
         let Year = items.startDate.year
         let status = items.status
         let season = items.season
@@ -87,9 +84,6 @@ function Popular(_variables) {
         allDescription_All_Fav.push(des)
         allGen_All_Fav.push(gen)
         allAvg_All_Fav.push(avg)
-
-
-
 
       })
 
@@ -118,7 +112,7 @@ function Popular(_variables) {
         // Card Name Headline
         const headline_All_Fav = AnimeHeadlines[index]; // THE MAIN NAME variable
         const Card_All_Fav = All_Card_Content[index]; // This Provide Variable to all content related
-        console.log(Card_All_Fav, "dddddddddddddd")
+
         // Card Main Name
         const Name_All_Fav = allNames_All_Fav[index];
         const h1Element_All_Fav = headline_All_Fav.querySelector("h2[data-name-All-Fav]");
@@ -173,10 +167,14 @@ function Popular(_variables) {
         UpdateTheElement_All_Fav(divElement, index)
       });
 
-
       removeSkeleton() // To Remove the Skeleton Loading Animation
-
     })
+
+    .catch((error) => {
+      console.error('Error:', error);
+      alert("API is overloaded, Please Wait ")
+    });
+
 
   function removeSkeleton() {
     // Remove the 'Skeleton' class from existing elements
@@ -191,22 +189,31 @@ function Popular(_variables) {
 
 }
 
-
+//  Check if the scroll event listener is added or not
+let isScrollListenerAdded_MoreFav = true;
 // Get a reference to the target element you want to observe
 const targetElement = document.getElementById('SEC-5-View');
 
-// Define the callback function to be executed when the element is visible
+// This checks if elements is visible or not.
 function handleVisibility(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // The target element is fully or partially visible
-      // Execute your function here
-      isAtBottom();
-      window.addEventListener('scroll', isAtBottom);
-      // Stop observing if needed
-      observer.unobserve(targetElement);
+
+      // Adding the scroll event listener 
+      if (!isScrollListenerAdded_MoreFav) {
+        window.addEventListener('scroll', isAtBottom);
+        isScrollListenerAdded_MoreFav = true;
+      }
+
     }
-  });
+    else {
+      // if target element is not visible & Remove the scroll event listener
+      window.removeEventListener('scroll', isAtBottom);
+      isScrollListenerAdded_MoreFav = false;
+    }
+
+  })
+
 }
 
 // Create an Intersection Observer
@@ -227,7 +234,7 @@ function isAtBottom() {
   const documentHeight = document.documentElement.scrollHeight; // Total height of the document
   const scrollPosition = window.scrollY; // Current vertical scroll position
 
-  // Define a threshold (e.g., 10 pixels) to trigger the action
+  //It will run, when there is 2px gap between bottom
   const threshold = 2;
 
   // Check if the user has reached the bottom
@@ -238,11 +245,9 @@ function isAtBottom() {
     })
     variables.page++;
     Popular(variables);
-    console.log("calling")
-
+  
   }
 }
-
 
 
 function Adding_Holder_Fav() {
@@ -271,4 +276,4 @@ function Adding_Holder_Fav() {
 }
 
 
-Popular(variables);
+

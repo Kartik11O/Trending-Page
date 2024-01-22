@@ -82,28 +82,6 @@ function show1({ target }) {
 
       })
 
-
-      let col = ['#F277AF', '#2ECFDB', '#FEE561']
-      let math = Math.floor(Math.random() * 3)
-      console.log(math)
-      if (math == 1) {
-        $(".Gen").css({
-          "background-color": "#F277AF"
-        })
-      }
-      else if (math == 2) {
-        $(".Gen").css({
-          "background-color": "#2ECFDB"
-        })
-      }
-      else if (math == 0) {
-        $(".Gen").css({
-          "background-color": "#FEE561"
-        })
-      }
-
-
-
     })
 
 }

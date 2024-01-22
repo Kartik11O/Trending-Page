@@ -1,7 +1,7 @@
 import { query, variables } from "../componentss/Api.js"
 //  Fetching form Components (TYPE ANIME) Done
 
-// function View(_variables){
+
 // Start Fetching the Api Data
 let Anime = fetch(`https://graphql.anilist.co`, {
   method: 'POST',
@@ -17,21 +17,14 @@ let Anime = fetch(`https://graphql.anilist.co`, {
 
 Anime.then((DataReq) => DataReq.json())
   .then((VV) => {
-    console.log(VV)
+
     let Anime = VV.data.anime.media
-    // console.log(Anime, 'ANIME')
-
     let manga = VV.data.manga.media
-    // console.log(manga, 'MANGA')
-
     let favourites = VV.data.favourites.media
-    // console.log(favourites, 'favourites')
-
     let popularity = VV.data.popularity.media
-    // console.log(popularity, 'popularity')
 
+  
     // Here Maped the Data
-
     Anime.map(items => {
       let Poster_Anime = items.coverImage.extraLarge
       let Name_AnimeE = items.title.english
@@ -209,6 +202,10 @@ Anime.then((DataReq) => DataReq.json())
 
   })
 
+  .catch((error) => {
+    console.error('Error:', error);
+    alert("API is overloaded, Please Wait ")
+  });
 
 
 

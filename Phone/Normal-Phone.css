@@ -201,7 +201,7 @@ html{
 #Show_Img_Holder_S {
     position: relative;
     height: auto;
-    width: clamp(45px,12vw,45px) !important;
+    width: clamp(50px,27vw,91px);
 }
 #Show_Img {
     width: 100%;
@@ -221,4 +221,10 @@ html{
 
 #Headline-1__Wapper h1 {
     font-size: 6rem;
+}
+
+.Gen{
+height: 20px ;
+line-height: 20px;
+padding: 1px 15px;
 }

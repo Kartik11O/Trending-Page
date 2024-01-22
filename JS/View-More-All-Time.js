@@ -86,7 +86,7 @@ function Time(_variables) {
         allGen_All_Time.push(gen)
         allAvg_All_Time.push(avg)
 
-
+ 
       })
       // FlatMap Area (STARTING)
       let newCoverImages_All_Time = Data.flatMap(item => item.coverImage.extraLarge);
@@ -172,6 +172,11 @@ function Time(_variables) {
 
     })
 
+    .catch((error) => {
+      console.error('Error:', error);
+      alert("API is overloaded, Please Wait ")
+    });
+
 
   function removeSkeleton() {
     // Remove the 'Skeleton' class from existing elements
@@ -185,25 +190,35 @@ function Time(_variables) {
   }
 }
 
+//  Check if the scroll event listener is added or not
+let isScrollListenerAdded_AllTime = false;
 
-// Get a reference to the target element you want to observe
+// Target the element you want to observe
 const targetElement = document.getElementById('SEC-5-View-2');
 
-// Define the callback function to be executed when the element is visible
-function handleVisibility(entries, observer) {
+// This checks if elements is visible or not.
+function handleVisibility(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // The target element is fully or partially visible
-      // Execute your function here
-      isAtBottom();
-      window.addEventListener('scroll', isAtBottom);
-      // Stop observing if needed
-      observer.unobserve(targetElement);
+
+      // Adding the scroll event listener 
+      if (!isScrollListenerAdded_AllTime) {
+        window.addEventListener('scroll', isAtBottom);
+        isScrollListenerAdded_AllTime = true;
+      }
+
     }
-  });
+    else {
+      // if target element is not visible & Remove the scroll event listener
+      window.removeEventListener('scroll', isAtBottom);
+      isScrollListenerAdded_AllTime = false;
+    }
+
+  })
+
 }
 
-// Create an Intersection Observer
+// Create an Intersection Observer 
 const observer = new IntersectionObserver(handleVisibility, {
   root: null, // Use the viewport as the root
   rootMargin: '0px', // No margin
@@ -221,7 +236,7 @@ function isAtBottom() {
   const documentHeight = document.documentElement.scrollHeight; // Total height of the document
   const scrollPosition = window.scrollY; // Current vertical scroll position
 
-  // Define a threshold (e.g., 10 pixels) to trigger the action
+  // It will run, when there is 2px gap between bottom
   const threshold = 2;
 
   // Check if the user has reached the bottom
@@ -232,12 +247,8 @@ function isAtBottom() {
     })
     variables.page++;
     Time(variables);
-    console.log("calling")
-
   }
 }
-
-
 
 
 function Adding_Holder_ALL_Time() {
@@ -266,4 +277,4 @@ function Adding_Holder_ALL_Time() {
 }
 
 
-Time(variables);
+
