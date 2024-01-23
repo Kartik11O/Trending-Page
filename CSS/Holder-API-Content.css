@@ -6,18 +6,33 @@
 
 .IMGholder {
   position: relative;
-  width: clamp(230px, 15vw, 230px);
-  height: clamp(343px, 46vh, 343px);
+  width: clamp(230px, 15vw, 230px) !important;
+  height: clamp(343px, 46vh, 343px) !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 12px;
+  display: block !important;
 }
 
-#Anime-Name-Wapper{
-  background-color: #F9F6EE;
-     width: 100%;
-     height: max-content;
+.AllImg {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  border-radius: 12px;
+}
+
+img[src=""],
+img:not([src]) {
+  display: none;
+}
+
+#Anime-Name-Wapper {
+  width: 100%;
+  min-height: 3vh;
+  height: max-content;
+  display: block !important;
+  ;
 }
 
 .Anime-Headline {
@@ -27,6 +42,8 @@
   font-family: var(--Headline);
   color: #414244;
   text-align: center;
+  background-color: #F9F6EE;
+
 }
 
 .Anime-GEN {
@@ -124,3 +141,20 @@
 
 
 
+/* 
+const divElements = document.querySelectorAll(".IMG_2");
+      const AnimeHeadlines = document.querySelectorAll(".Anime-Name-Wapper");
+      
+      divElements.forEach((divElement, index) => {
+        const imageUrl = allCoverImages[index];
+        const imgElement = divElement.querySelector("img[data-pic]");
+
+        const headline = AnimeHeadlines[index];
+        const name = allNames[index];
+        const h1Element = headline.querySelector("h2[data-name]");
+      
+        setTimeout(() => {
+          imgElement.src = imageUrl;
+          h1Element.textContent = name;
+        }, 1000 ); // Adjust the delay here based on your requirements
+      }); */

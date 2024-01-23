@@ -1,4 +1,4 @@
-export { query, variables };
+export { query, variables , queryM , queryA , queryF , querySea , variablesSea};
 
 var query = `
 query ($page: Int, $perPage: Int, $pageFavorites: Int, $perPageFavorites: Int, $pagePopularity: Int, $perPagePopularity: Int, $searchAnime: String, $searchManga: String) {
@@ -119,7 +119,283 @@ var variables = {
 
 }
 
-// This one Fetch Anime Search Content (Variables)
+// ViewMore_Manga
+var queryM = `
+query ($page: Int, $perPage: Int, $search: String) {
+    Page(page: $page, perPage: $perPage) {
+      pageInfo {
+        total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
 
+      }
+      media(search: $search, type: MANGA , sort: TRENDING_DESC) {
+        id
+        
+        title {
+          romaji
+          english
+          native
+        }
+        bannerImage
+        coverImage  {
+            extraLarge
+        }
+       characters {
+          edges {
+            id
+            node {
+              image {
+                large
+              }
+            }
+          }
+        }
+          
+        studios(isMain: true) {
+          nodes {
+            name
+          }
+        }
+         
+        startDate {
+            year
+            month
+            day
+        }
+        endDate{
+            year
+            month
+            day 
+        }
+        format
+        trending
+        isAdult
+        type
+        genres
+        episodes
+        duration
+        status
+        popularity
+        averageScore
+        season
+        siteUrl
+        description
+      }
+    }
+  }
+`
+//  ViewMore_All Time Propuler
+var queryA =`
+query ($page: Int, $perPage: Int, $search: String) {
+    Page(page: $page, perPage: $perPage) {
+      pageInfo {
+        total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
 
+      }
+      media(search: $search, type: ANIME , sort: POPULARITY_DESC) {
+        id
+        
+        title {
+          romaji
+          english
+          native
+        }
+        bannerImage
+        coverImage  {
+            extraLarge
+        }
+       characters {
+          edges {
+            id
+            node {
+              image {
+                large
+              }
+            }
+          }
+        }
+          
+        studios(isMain: true) {
+          nodes {
+            name
+          }
+        }
+         
+        startDate {
+            year
+            month
+            day
+        }
+        endDate{
+            year
+            month
+            day 
+        }
+        format
+        trending
+        isAdult
+        type
+        genres
+        episodes
+        duration
+        status
+         popularity
+         averageScore
+       season
+       siteUrl
+         description
+       }
+     }
+   
+    
+    }
+`
+//   ViewMore_All Time Favourites
+var queryF = `
+query ($page: Int, $perPage: Int, $search: String) {
+    Page(page: $page, perPage: $perPage) {
+      pageInfo {
+        total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
 
+      }
+      media(search: $search, type: ANIME , sort: FAVOURITES_DESC) {
+        id
+        
+        title {
+          romaji
+          english
+          native
+        }
+        bannerImage
+        coverImage  {
+            extraLarge
+        }
+       characters {
+          edges {
+            id
+            node {
+              image {
+                large
+              }
+            }
+          }
+        }
+          
+        studios(isMain: true) {
+          nodes {
+            name
+          }
+        }
+         
+        startDate {
+            year
+            month
+            day
+        }
+        endDate{
+            year
+            month
+            day 
+        }
+        format
+        trending
+        isAdult
+        type
+        genres
+        episodes
+        duration
+        status
+        popularity
+        averageScore
+        season
+        siteUrl
+        description
+      }
+    }
+  }
+`
+// Search-One
+let querySea = `
+query ($page: Int, $perPage: Int, $search: String) {
+    Page(page: $page, perPage: $perPage) {
+      pageInfo {
+        total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
+
+      }
+      media(search: $search, type: ANIME , sort: TRENDING_DESC) {
+        id
+        
+        title {
+          romaji
+          english
+          native
+        }
+        bannerImage
+        coverImage  {
+            extraLarge
+        }
+       characters {
+          edges {
+            id
+            node {
+              image {
+                large
+              }
+            }
+          }
+        }
+          
+        studios(isMain: true) {
+          nodes {
+            name
+          }
+        }
+         
+        startDate {
+            year
+            month
+            day
+        }
+        endDate{
+            year
+            month
+            day 
+        }
+        format
+        trending
+        isAdult
+        type
+        genres
+        episodes
+        duration
+        status
+        popularity
+        averageScore
+        season
+        siteUrl
+        description
+      }
+    }
+  }
+`
+let variablesSea = {
+  // search: target -- I directly added to code in file with variables (Type-Search)
+  id: 15125,
+  page: 1,
+  perPage: 50
+}

@@ -121,6 +121,26 @@ html{
     justify-content: center;
     animation: tests 1s both;
 }
+#Row-7 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
+#Row-8 {
+    width: clamp(317px, 100vw, 1459px);
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: tests 1s both;
+}
 
 .Holder {
     width: clamp(172px,46vw,230px);
@@ -153,4 +173,58 @@ html{
 
 .LI99 a {
     font-weight: 500;
+}
+
+.SVG-1{
+    width: 28px;
+}
+.SVG-2{
+    width: 23px;
+}
+
+.layer span.fab {
+    line-height: 48px;
+}
+
+.layer {
+    width: clamp(37.51px,10vw,37.51px);
+    height: clamp(39.36px,5.9vh,39.36px);
+}
+
+.tooltip{
+    display: none;
+}
+
+.input-container {
+    width: clamp(293px,28vw,430px);
+}
+#Show_Img_Holder_S {
+    position: relative;
+    height: auto;
+    width: clamp(50px,27vw,91px);
+}
+#Show_Img {
+    width: 100%;
+
+}
+
+#Headline {
+    /* width: clamp(157px,42vw,157px); */
+    padding: 0px 12px;
+}
+
+#Search_bar {
+    width: clamp(307px,64vw,307px);
+    height: clamp(35px,3.8vh,35px);
+    border-radius: 6px;
+}
+
+#Headline-1__Wapper h1 {
+    font-size: 6rem;
+}
+
+.Gen{
+height: 20px ;
+line-height: 20px;
+padding: 1px 15px;
 }

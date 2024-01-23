@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WaifuX</title>
+  <link rel="icon" type="image/x-icon" href="CSS/Images/avatar.png">
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet" />
@@ -20,6 +21,7 @@
 <link rel="stylesheet" href="CSS/SEC-3/A.css">
 <link rel="stylesheet" href="CSS/SEC-4/A.css">
 <link rel="stylesheet" href="CSS/SEC-5/SEC-5.css">
+<link rel="stylesheet" href="CSS/SEC-6/A.css">
 <link rel="stylesheet" href="CSS/btn.css">
 <link rel="stylesheet" href="CSS/Holder-API-Content.css">
 <link rel="stylesheet" href="CSS/SEC-3/B.css">
@@ -27,9 +29,11 @@
 <link rel="stylesheet" href="CSS/btn2.css">
 <link rel="stylesheet" href="CSS/Loading.css">
 <link rel="stylesheet" href="CSS/Footer/footer.css">
-<link rel="stylesheet" media="(max-width:500px)" href="Phone/Normal-Phone.css">
+<link rel="stylesheet" media="(max-width:480px)" href="Phone/Normal-Phone.css">
 <link rel="stylesheet" href="Phone/Landscape.css">
+<link rel="stylesheet" href="Phone/Landscape-Tablet.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <body>
   <main id="main">
     <!-- <div id="loading">
@@ -40,7 +44,7 @@
       <div class="one"></div>
     </div> -->
     <div id="btn-Wapper" class="Click-close">
-      <!-- <div id="Click"></div> -->
+
       <div class="switch ">
         <input type="checkbox">
         <div>
@@ -58,9 +62,10 @@
     </div>
 
     <section id="SEC-1">
-      <!-- (Contain--- NavBar / Social-Icons / Headline) -->
       <div id="Navbar">
-        <Nav> </Nav>
+        <Nav>
+
+        </Nav>
 
         <div id="Headline">
           <h1 id="Headline11">Detorrex</h1>
@@ -75,18 +80,22 @@
           </ul>
         </div>
       </div>
-      <!-- (Contain --- Search Bar) -->
+
       <div id="Search__Bar__Container">
         <div id="Headline-1__Wapper">
           <h1> Search </h1>
           <div id="S_Box">
-            <input type="text" id="Search_bar" type="search" class="inputSearchField" placeholder="Search Anime!!">
+            <input type="text" id="Search_bar" type="search" class="inputSearchField SearchJS"
+              placeholder="Search Anime!!">
+
           </div>
+
         </div>
 
         <div id="Show1_Container">
-          <div id="Nav-Inside">
+          <div id="NavS">
             <button id="myBtn">Search!</button>
+
             <button id="Back"> <svg xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-arrow-big-left-lines" width="34" height="34" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -97,13 +106,13 @@
                 <path d="M21 15v-6"></path>
                 <path d="M18 15v-6"></path>
               </svg> </button>
-
           </div>
+
         </div>
+
       </div>
     </section>
-  
-    
+
     <!--View More Container -->
     <section id="SEC-4">
       <div id="SEC-4-View-More" class="View__More-Container">
@@ -228,7 +237,7 @@
     <section id="SEC-5">
       <div class="Wapper-Contain">
         <div class="Trending-Container">
-  
+
           <h2 class="Trending" id="ThisS">All tiMe fAVourites</h2>
           <button class="View" id="Color_O"> View More</button>
         </div>
@@ -250,91 +259,83 @@
       </div>
     </section>
 
-
-
-  
-  
-  </section>
-
- <!-- <section style="width: 100vw; height: 100vh; display: flex; justify-content: center; 
- align-items: center;">
-
-
-  <div class="Holder card " data-aos="zoom-in">
-  <div class="IMGholder Skeleton" style="background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg);">
-  </div>
-  <div class="card__content">
-    <p class="card__title">${Name_AnimeE || Name_Anime}</p>
-    <p class="card__description">${des}</p>
-    <p class="card__Status extra1 ALL"><b>Status:</b> ${status} , ${season} ${Year}</p>
-    <p class="card__Gen extra2 ALL"><b>Genre:</b> ${gen[1] || gen[0] || gen[2] || gen[3]}, ${gen[0]}, ${gen[2]} </p>
-    <p class="card__Popularity extra3 ALL"><b>Popularity:</b> ${avg} &#128516 </p>
-
-  </div>
-    <div id="Anime-Name-Wapper" class="Skeleton">
-      <h2 class="Anime-Headline ">Demon Slayer: Kimetsu no Yaiba</h2>
-    </div>
-  </div>
- </section> -->
-
     <!-- Bar -->
-    <section>
-      <div class="tooltip-container">
-        <div class="tooltip">
-          <div class="profile">
-            <div class="user">
-              <div class="img">Ui</div>
-              <div class="details">
-                <div class="name">User</div>
-                <div class="username">@username</div>
-              </div>
-            </div>
-            <div class="about">500+ Connections</div>
-          </div>
-        </div>
-        <div class="text">
-          <a class="icon" href="https://freecodez.com/">
-            <div class="layer">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span class="fab fa-linkedin">
-                <svg viewBox="0 0 448 512" height="1em">
-                  <path
-                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-            <div class="text">LinkedIn</div>
-          </a>
-        </div>
-      </div>
-      
-    </section>
     <footer id="footer">
       <h4 id="h4"> Created by - Raghav Shrivastava</h4>
     </footer>
-  </main>
-  <script src="JS/code.jquery.com_jquery-3.7.0.min.js"></script>
-  
-  <script type="module" src="JS/Type_Anime.js"></script>
-  <script type="module" src="JS/Type_Search.js"></script>
-  <script src="JS/SearchAnimation.js"></script>
-  <!-- <script type="module" src="JS/Type-Manga.js"></script> -->
-  <!-- <script type="module" src="JS/View-More.js"></script> -->
  
-  <!-- <script type="module" src="JS/Type_Popular.js"></script> -->
-  <!-- <script cript type="module" src="JS/Type_All_Time.js"></script> -->
-  <!-- <script type="module" src="JS/View-More-Manga.js"></script> -->
-  <!-- <script type="module" src="JS/View-More-Popular.js"></script> -->
-  <!-- <script type="module" src="JS/View-More-All-Time.js"></script> -->
+  </main>
+  <section id="SEC-6">
+
+    <nav id="Nav_Bar_Search">
+      <button class="View-Back SearchJS" id="=s">
+        <div class="radio-wrapper">
+          <input class="input" name="btn" id="value" type="radio">
+          <div class="btn">
+            <span aria-hidden="">_</span>Back
+            <span class="btn__glitch" aria-hidden="">_Back🦾</span>
+            <label class="number">r1</label>
+          </div>
+        </div>
+
+      </button>
+      <div class="input-container">
+        <input type="text" name="text" class="input" id="SearchJS" placeholder="search...">
+        <span class="icon">
+          <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </span>
+      </div>
+    </nav>
+
+    <div id="Content-Wapperr">
+      <div class="Show_Container">
+        <div id="Show_Img"
+          style=" background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg);">
+        </div>
+        <div id="Show_details">
+          <h2 class="Show_Names">${nameE || namee}</h2>
+          <p class="Show_About">${des}</p>
+          <p class="Show_info"><b>Average Score:</b> ${avg} &#128516</p>
+          <p class="Show_info"><b>Status:</b> ${status}</p>
+          <p class="Show_info"><b>Episodes:</b> ${ep}</p>
+          <p class="Show_info"><b>Start Date:</b> ${day}-${month}-${year}</p>
+          <p class="Show_info"><b>End Date:</b> ${eday}-${emonth}-${eyear}</p>
+          <span class="Gen"> action</span>
+          <span class="Gen"> action</span>
+          <span class="Gen"> action</span>
+          <span class="Gen"> action</span>
+          <span class="Gen"> action</span>
+        </div>
+
+      </div>
+    </div>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="RaghavShrivastava" data-description="Support me on Buy me a coffee!" data-message="Thank's for the coffee." data-color="#ffdd00" data-position="left" data-x_margin="18" data-y_margin="18"></script>
+  </section>
+ 
+ 
+  <script src="JS/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script type="module" src="JS/ALL-Father.js"></script>
+  <script type="module" src="JS/Type_Search.js"></script>
+  <script type="module" src="JS/View-More.js"></script>
+  <script type="module" src="JS/View-More-Manga.js"></script>
+  <script type="module" src="JS/View-More-Favourites.js"></script>
+  <script type="module" src="JS/View-More-All-Time.js"></script>
   <script src="JS/Click.js"></script>
   <script type="module" src="componentss/Api.js"></script>
-  <script src="JS/Loading.js"></script>
   <script src="Phone/AOS.js"></script>
-  <!-- <script type="module" src="componentss/api2.js"></script> -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -342,5 +343,6 @@
     });
   </script>
 </body>
+
 
 </html>

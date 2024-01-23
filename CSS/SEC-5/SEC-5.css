@@ -23,7 +23,7 @@ color: #000000
 }
 
 #Row-5{
-    width: 95vw;
+    width: clamp(317px, 100vw, 1459px);
     height:max-content;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ color: #000000
 }
 
 #Row-6{
-    width: 95vw;
+    width: clamp(317px, 100vw, 1459px);
     height:max-content;
     display: flex;
     justify-content: center;

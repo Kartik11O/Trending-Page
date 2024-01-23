@@ -89,9 +89,12 @@ html{
   transition: all 0.2s;
   font-size: 17px;
   border-radius: 10px;
+  font-family: var(--Headline) !important;
 }
 
 .tooltip {
+  width: 17vw;
+  height: 14vh;
   position: absolute;
   top: 0;
   left: 50%;
@@ -107,7 +110,7 @@ html{
 }
 
 .profile {
-  background: #2a2b2f;
+  background: #000000d4;
   border-radius: 10px 15px;
   padding: 10px;
   border: 1px solid rgba(11, 63, 95, 1);
@@ -118,6 +121,47 @@ html{
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+
+}
+#profile-1{
+  background-image: url(Images/DP-L.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#profile-2{
+  background-image: url(Images/DP-IG.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#profile-3{
+  background-image: url(https://i.pinimg.com/564x/10/27/eb/1027eb2b86cfb6eda40be0b3834c359e.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#IMG-1{
+  background-image: url(Images/LINK.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#IMG-2{
+  background-image: url(Images/IG.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#IMG-3{
+  background-image: url(https://c1.wallpaperflare.com/preview/904/839/753/business-internet-browser-inbox.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: -131%;
+}
+#P-3-H{
+  height: 11vh;
 }
 
 .icon {
@@ -127,8 +171,8 @@ html{
   position: relative;
 }
 .layer {
-  width: 55px;
-  height: 55px;
+  width: clamp(50px,3.2vw,50px);
+  height: clamp(50px,6.7vh,50px);
   transition: transform 0.3s;
 }
 .icon:hover .layer {
@@ -148,11 +192,11 @@ html{
 .layer span,
 .text {
   color: #1da1f2;
-  border-color: #1da1f2;
+  border-color: #cacaca;
 }
 
 .icon:hover.layer span {
-  box-shadow: -1px 1px 3px #1da1f2;
+  box-shadow: -1px 1px 3px #c1c4c5;
 }
 .icon .text {
   position: absolute;
@@ -166,6 +210,7 @@ html{
 .icon:hover .text {
   bottom: -35px;
   opacity: 1;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .icon:hover .layer span:nth-child(1) {
@@ -192,16 +237,16 @@ html{
   font-size: 30px;
   line-height: 64px;
   text-align: center;
-  fill: #1da1f2;
-  background: #000;
+  fill: #c3c3c3;
+  background: #0000002e;
 }
 .user {
   display: flex;
   gap: 10px;
 }
 .img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   font-size: 25px;
   font-weight: 700;
   border: 1px solid #1da1f2;
@@ -215,14 +260,18 @@ html{
   font-size: 17px;
   font-weight: 700;
   color: #1da1f2;
+  font-family: var(--Headline);
 }
 .details {
   display: flex;
   flex-direction: column;
   gap: 0;
   color: #fff;
+  font-family: var(--Headline);
 }
 .about {
   color: #ccc;
   padding-top: 5px;
+  padding-left: 6px;
+  font-family: var(--Headline);
 }

@@ -53,7 +53,7 @@
 
 #Row-3 {
     position: relative;
-    width: clamp(300px, 95vw, 1459px);
+    width: clamp(317px, 100vw, 1459px);
     height: min-content;
     display: flex;
     gap: 50px;

@@ -1,4 +1,4 @@
-@media all and (max-device-width: 767px) and (orientation: landscape){
+@media all and (min-width: 639px) and (max-width: 1023px) and (orientation: landscape){
     html{
         font-size: 50%;
     }
@@ -121,7 +121,7 @@
     }
     
     .Holder {
-        width: clamp(186px,28vw,186px);
+        width: clamp(200.15px,30vw,200.15px);
     }
     .IMGholder {
         width: inherit;
@@ -149,8 +149,33 @@
         font-size: 1.4rem;
     }
 
+    #Headline11 {
+        /* font-size: 5rem; */
+    }
 
-
-
+    .SVG-1{
+        width: 28px;
+    }
+    .SVG-2{
+        width: 23px;
+    }
     
+    .layer span.fab {
+        line-height: 48px;
+    }
+    
+    .layer {
+        width: clamp(37.51px,10vw,37.51px);
+        height: clamp(39.36px,5.9vh,39.36px);
+    }
+    
+    .tooltip{
+        display: none;
+    }
+    
+    #Headline {
+        width: clamp(157px,42vw,157px);
+    }
+
+
 }

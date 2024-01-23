@@ -8,7 +8,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 9px;
 }
 
 /* Track */
@@ -25,14 +25,35 @@ body {
 #SEC-1 {
     position: relative;
     width: clamp(300px, 100%, 100%);
-    height: clamp(300px,120vh,896px);
+    height: clamp(300px, 100vh, 747px);
+    height: 120vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-background-image: url(https://images6.alphacoders.com/132/1326238.png);
+     background-image: url(https://images6.alphacoders.com/132/1326238.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+#Container-1 {
+    position: relative;
+    width: clamp(300px, 100%, 1536px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Search_bar {
+    border: none;
+    width: clamp(400px,24vw,400px);
+    height: clamp(40px,5.7vh,40px);
+    padding: 0px 16px;
+    border-radius: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    outline: none;
 }
 
 #Show1_Container {
@@ -49,19 +70,67 @@ background-image: url(https://images6.alphacoders.com/132/1326238.png);
     margin-bottom: 132px;
 }
 
+.Show_1Classes-Remove{
+     animation: Closings 0.8s both;
+}
+@keyframes Closings{
+    0%{
+        width: 97vw;
+        height: 97vh;
+    }
+    100%{
+        opacity: 0;
+        width: 0vw;
+        height: 0vh;
+    }
+}
+.Show_1Classes{
+    animation: Opening 0.8s both;
+}
+@keyframes Opening {
+    0%{
+        /* opacity: 0; */
+        width: 0vw;
+        height: 0vh;
+    }
+  
+    100%{
+        width: 97vw;
+        height: 97vh;
+    }
+}
+.Type{
+    animation: Type 0.8s both;
+}
+@keyframes Type {
 
-#Search__Bar__Container{
+    100%{
+        transform: translateY(-435px);
+        border: none;
+        width: 30vw;
+        height: 5vh;
+        padding: 0px 16px;
+        border-radius: 13px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        outline: none;
+       /* position: absolute; */
+    }
+}
+#NavS{
+    position: relative;
+    top: 0;
+    background-color: rgb(0, 0, 0);
     width: 100%;
-    height: clamp(597px,80vh,597px);
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
-
 #Headline-1__Wapper{
-    width: clamp(300px,40vw,614px);
-    height: clamp(298px,40vh,298px);
+    width: clamp(614px,40vw,614px);
+    height: clamp(281px,40vh,281px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,92 +155,16 @@ background-image: url(https://images6.alphacoders.com/132/1326238.png);
     font-size: 1.2rem;
 }
 
-/* Search box Container */
 #S_Box{
-    width: clamp(300px,29vw,445px);
-    height: clamp(37px,5vh,37px);
+    width: clamp(310px,29vw,445px);
     text-align: center;
+    height: clamp(35.15px,5vh,35.15px);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 103;
 }
-
-#Search_bar {
-    border: none;
-    width: clamp(300px,22vw,369px);
-    height: clamp(37px,5vh,37px);
-    padding: 0px 16px;
-    border-radius: 13px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    outline: none;
-}
-
-
-/* Open the Container */
-.Show_1Classes{
-    animation: Opening 0.8s both;
-}
-@keyframes Opening {
-    0%{
-        width: 0vw;
-        height: 0vh;
-    }
-  
-    100%{
-        width: clamp(300px,97vw,1489px);
-        height: clamp(300px,97vh,724px);
-    }
-}
-
-/* Close the Container */
-.Show_1Classes-Remove{
-    animation: Closings 0.8s both;
-}
-@keyframes Closings{
-   0%{
-       width: 97vw;
-       height: 97vh;
-   }
-   100%{
-       opacity: 0;
-       width: 0vw;
-       height: 0vh;
-   }
-}
-/* Input Bar Animation (For going to up side) */
-.Type{
-    animation: Type 0.8s both;
-}
-@keyframes Type {
-
-    100%{
-        transform: translateY(-435px);
-        border: none;
-        width: 30vw;
-        height: 5vh;
-        padding: 0px 16px;
-        border-radius: 13px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        outline: none;
-       /* position: absolute; */
-    }
-}
-
-/* Nav Inside on (Open-Close Container) */
-#Nav-Inside{
-    position: relative;
-    top: 0;
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    height: clamp(74px,10vh,74px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-
 
 #myBtn{
     position: relative;
@@ -209,4 +202,3 @@ background-image: url(https://images6.alphacoders.com/132/1326238.png);
     background-color: #fff;
     color: #000000;
 }
-

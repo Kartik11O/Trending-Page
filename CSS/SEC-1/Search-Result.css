@@ -1,21 +1,45 @@
 .Show_Container{
+    position: relative;
+    width: 98%;
+    height: 100%;
+    display: flex;
+    box-shadow: 85px 9px 6px -1px rgba(0,0,0,0.1), 0px 3px 11px -1px rgba(0,0,0,0.06);
+    border-radius: 25px;
+    animation: Loading 0.6s both;
+}
+.Show_Containers-Skeleton-remover{
     width: 98%;
     height: clamp(410px,55vh,410px);
     display: flex;
     box-shadow: 85px 9px 6px -1px rgba(0,0,0,0.1), 0px 3px 11px -1px rgba(0,0,0,0.06);
     border-radius: 25px;
-    /* animation: Loading 0.6s both ; */
 }
 @keyframes Loading {
     0%{
         opacity: 0;
-        transform: translateY(80px);
+      
     }
 }
-
+.Skeleton-Search{
+color: transparent;
+}
+.Skeleton-Search::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: left -40px top 0;
+    z-index: -1;
+    animation: shine 1s ease infinite;
+    background-color: #d9dadb;
+  }
 #Show_Img{
     position: relative;
-    width: clamp(291px,19vw,291px);
+    width: 100%;
     height: 100%;
     background-image: url();
     background-position: center;
@@ -25,21 +49,24 @@
 }
 
 #Show_details{
-    width: clamp(300px,75vw,1152px);
+    width: clamp(300px,75vw,1152px); 
     height: 100%;
     border-radius: 0px 25px 25px 0px;
 
 }   
 
 .Show_Names{
+    position: relative;
     font-family: var(--Headline);
     margin-left: 1rem;
     font-size: 1.5rem;
     margin-bottom: 0;
+    border-bottom: 2px solid black;
 }
 
 .Show_About{
-    width: clamp(300px,73vw,1121px);
+    position: relative;
+    width: clamp(263px,73vw,1121px);
     margin-left: 1rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1rem;
@@ -47,6 +74,7 @@
 }
 
 .Show_info{
+    position: relative;
     margin: 0;
     margin-left: 1rem;
     font-family: var(--Headline);
@@ -54,6 +82,7 @@
 }
 
 .Show_gen{
+    position: relative;
     font-family: var(--Headline);
 }
 
@@ -83,3 +112,25 @@
       transform: rotate(360deg);
     }
   }
+
+  .Gen{
+    position: relative;
+    font-family: var(--Headline);
+    width: max-content;
+    height: 28px;
+    border-radius: 22px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 1rem;
+    margin-bottom: 28px;
+    line-height: 28px;
+    border: 1px solid black;
+    box-shadow: 4px 4px #000000;
+    margin-top: 2px;
+    padding: 1px 19px;
+  }
+  #Show_Img_Holder_S{
+    height: auto;
+    width: clamp(180px,19vw,291px);
+  }
+  

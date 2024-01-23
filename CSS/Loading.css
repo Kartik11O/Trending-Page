@@ -2,7 +2,9 @@
 
 /* Loading - Animation */
 .Skeleton {
-  
+  /* width: 186px; */
+  /* height: 260px; */
+  /* border: 2px solid red; */
 }
 .Skeleton::before{
   position: absolute;
